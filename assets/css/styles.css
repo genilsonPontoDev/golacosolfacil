@@ -72,11 +72,15 @@ a{ color: inherit; text-decoration: none; }
 
 /* Header */
 .lp-header{
-  position: sticky;
+  /* position: sticky; */  
   top:0;
   z-index: 50;
   background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.12));
   backdrop-filter: blur(6px);
+  /* tmp */
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
 }
 .lp-header__inner{
   height: 86px;
