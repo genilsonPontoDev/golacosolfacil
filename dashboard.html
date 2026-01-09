@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golaço da Solfácil • Área Logada</title>
+  <meta name="description" content="Acompanhe sua pontuação, trilha de faturamento e números da sorte na campanha Golaço da Solfácil." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="page page--dashboard">
+  <!-- HEADER (shared) -->
+  <header class="lp-header lp-header--solid">
+    <div class="container lp-header__inner">
+      <button class="lp-header__burger" type="button" aria-label="Abrir menu" data-drawer-open>
+        <span class="lp-icon lp-icon--burger" aria-hidden="true"></span>
+      </button>
+
+      <a class="lp-brand" href="index.html" aria-label="Voltar para a Landing">
+        <img class="lp-brand__logo" src="assets/img/solfacil-logo.png" alt="Solfácil" />
+      </a>
+
+      <nav class="lp-nav" aria-label="Navegação">
+        <a class="lp-nav__link" href="#minha-pontuacao">Minha pontuação</a>
+        <a class="lp-nav__link" href="#marketing">Marketing</a>
+        <a class="lp-nav__link" href="#meus-clientes">Meus clientes</a>
+        <a class="lp-nav__link" href="#faq">Perguntas</a>
+      </nav>
+
+      <div class="lp-header__actions">
+        <label class="db-profile" aria-label="Perfil demo">
+          <span class="db-profile__label">Demo</span>
+          <select class="db-profile__select" data-profile-select>
+            <option value="integrador">Integrador</option>
+            <option value="cliente">Cliente final</option>
+          </select>
+        </label>
+        <a class="lp-btn lp-btn--outline lp-header__btn" href="index.html">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page__content" id="top">
+    <!-- HERO / COUNTDOWN -->
+    <section class="db-hero" aria-label="Campanha">
+      <div class="db-hero__bg" aria-hidden="true"></div>
+      <div class="db-hero__overlay" aria-hidden="true"></div>
+
+      <div class="container db-hero__inner">
+        <h1 class="db-hero__title">Campanha<br />Golaço da Solfácil</h1>
+        <p class="db-hero__subtitle" data-campaign-subtitle>
+          Acompanhe sua pontuação e confira seus números da sorte.
+        </p>
+
+        <div class="db-countdown" aria-label="Contagem regressiva">
+          <div class="db-countdown__label">Termina em</div>
+          <div class="db-countdown__time" data-countdown>--:--:--</div>
+          <div class="db-countdown__hint" data-period-hint></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK NAV CARDS -->
+    <section class="db-quick">
+      <div class="container">
+        <div class="db-quick__grid">
+          <a class="db-card" href="#minha-pontuacao">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Minha pontuação</div>
+            <div class="db-card__text">Trilha, metas e sorteios desbloqueados</div>
+          </a>
+          <a class="db-card" href="#marketing">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Marketing</div>
+            <div class="db-card__text">Materiais para divulgar a campanha</div>
+          </a>
+          <a class="db-card" href="#meus-clientes">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Meus clientes</div>
+            <div class="db-card__text">Acompanhe os números do cliente final</div>
+          </a>
+          <a class="db-card" href="#como-funciona">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Como funciona</div>
+            <div class="db-card__text">Regras, multiplicadores e elegibilidade</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="db-section" id="minha-pontuacao">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Meu Progresso na Campanha</h2>
+          <div class="db-section__actions">
+            <button class="lp-btn lp-btn--outline db-section__btn" type="button" data-refresh>Atualizar (demo)</button>
+          </div>
+        </header>
+
+        <div class="db-progress">
+          <div class="db-progress__left">
+            <div class="db-ring" aria-label="Progresso">
+              <div class="db-ring__value" data-progress-percent>0%</div>
+              <div class="db-ring__label">Meta atual</div>
+            </div>
+
+            <dl class="db-metrics">
+              <div class="db-metric">
+                <dt class="db-metric__label">Faturamento acumulado</dt>
+                <dd class="db-metric__value" data-revenue>R$ 0</dd>
+              </div>
+              <div class="db-metric">
+                <dt class="db-metric__label">Categoria</dt>
+                <dd class="db-metric__value" data-category>—</dd>
+              </div>
+              <div class="db-metric">
+                <dt class="db-metric__label">Números da sorte</dt>
+                <dd class="db-metric__value" data-lucky-total>0</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="db-progress__right">
+            <div class="db-track" aria-label="Trilha">
+              <div class="db-track__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-track-bar>
+                <span class="db-track__fill" data-track-fill></span>
+              </div>
+              <div class="db-track__steps" data-track-steps></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="db-panels">
+          <section class="db-panel">
+            <header class="db-panel__header">
+              <h3 class="db-panel__title">Metas atingidas</h3>
+            </header>
+            <ul class="db-list" data-achieved></ul>
+          </section>
+
+          <section class="db-panel">
+            <header class="db-panel__header">
+              <h3 class="db-panel__title">Sorteios desbloqueados</h3>
+            </header>
+            <ul class="db-list" data-unlocked></ul>
+          </section>
+
+          <section class="db-panel">
+            <header class="db-panel__header">
+              <h3 class="db-panel__title">Próximos prêmios</h3>
+            </header>
+            <ul class="db-list" data-next-prizes></ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETING -->
+    <section class="db-section" id="marketing">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Materiais de Marketing</h2>
+        </header>
+
+        <div class="db-marketing">
+          <div class="db-marketing__list" data-marketing-list></div>
+          <aside class="db-marketing__preview">
+            <div class="db-preview">
+              <div class="db-preview__canvas" data-marketing-preview>
+                Selecione um material para pré-visualizar (demo)
+              </div>
+              <div class="db-preview__actions">
+                <button class="lp-btn lp-btn--outline" type="button" data-marketing-download>Baixar (demo)</button>
+                <button class="lp-btn lp-btn--dark" type="button" data-marketing-copy>Copiar texto (demo)</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREA DO CLIENTE -->
+    <section class="db-section" id="meus-clientes">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Área do Cliente</h2>
+          <p class="db-section__subtitle">Visualize os números do cliente final (quando aplicável).</p>
+        </header>
+
+        <div class="db-client">
+          <a class="db-card db-card--wide" href="#" data-client-integrator>
+            <div class="db-card__title">Números do Integrador</div>
+            <div class="db-card__text" data-client-integrator-text>—</div>
+            <span class="db-card__cta">Acessar</span>
+          </a>
+          <a class="db-card db-card--wide" href="#" data-client-final>
+            <div class="db-card__title">Números do Cliente</div>
+            <div class="db-card__text" data-client-final-text>—</div>
+            <span class="db-card__cta">Acessar</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA (reaproveita estilo lp) -->
+    <section class="lp-section lp-section--soft" id="como-funciona">
+      <div class="container">
+        <header class="lp-section__header lp-section__header--center">
+          <h2 class="lp-section__title">Como Funciona</h2>
+          <p class="lp-section__subtitle">Resumo rápido do regulamento (demo). A fonte oficial é a API/Regulamento.</p>
+        </header>
+
+        <div class="lp-steps">
+          <article class="lp-step">
+            <span class="lp-step__badge">1</span>
+            <h3 class="lp-step__title">Compre / financie</h3>
+            <p class="lp-step__text">Compras e financiamentos elegíveis geram números da sorte automaticamente.</p>
+          </article>
+
+          <article class="lp-step">
+            <span class="lp-step__badge">2</span>
+            <h3 class="lp-step__title">Desbloqueie metas</h3>
+            <p class="lp-step__text">Ao atingir metas de faturamento acumulado, você concorre em novas categorias.</p>
+          </article>
+
+          <article class="lp-step">
+            <span class="lp-step__badge">3</span>
+            <h3 class="lp-step__title">Acompanhe tudo</h3>
+            <p class="lp-step__text">Veja números, progresso, sorteios e materiais de marketing dentro da plataforma.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="lp-section" id="faq">
+      <div class="container">
+        <header class="lp-section__header">
+          <span class="lp-section__mark" aria-hidden="true"></span>
+          <h2 class="lp-section__title">Perguntas Frequentes</h2>
+          <p class="lp-section__subtitle">Baseado no FAQ (demo). A versão final vem da API.</p>
+        </header>
+
+        <div class="lp-faq" data-faq></div>
+      </div>
+    </section>
+
+    <!-- WINNERS -->
+    <section class="db-section" id="ganhadores">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Ganhadores da Campanha</h2>
+          <p class="db-section__subtitle">Lista demonstrativa (mock). No real, vem direto da API.</p>
+        </header>
+
+        <div class="db-table" role="table" aria-label="Ganhadores">
+          <div class="db-table__head" role="rowgroup">
+            <div class="db-table__row db-table__row--head" role="row">
+              <div class="db-table__cell" role="columnheader">Data</div>
+              <div class="db-table__cell" role="columnheader">Prêmio</div>
+              <div class="db-table__cell" role="columnheader">Ganhador</div>
+              <div class="db-table__cell" role="columnheader">Número</div>
+            </div>
+          </div>
+          <div class="db-table__body" role="rowgroup" data-winners></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="lp-footer">
+      <div class="container lp-footer__bottom">
+        <div class="lp-footer__copy">© <span id="year"></span> Solfácil Energia Solar Ltda.</div>
+        <div class="lp-footer__legal">
+          <a class="lp-footer__legal-link" href="#">SCR</a>
+          <span class="lp-footer__sep">/</span>
+          <a class="lp-footer__legal-link" href="#">Termos de Uso</a>
+          <span class="lp-footer__sep">/</span>
+          <a class="lp-footer__legal-link" href="#">Política de Privacidade</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- DRAWER (mobile) -->
+  <div class="lp-drawer" data-drawer>
+    <button class="lp-drawer__backdrop" type="button" aria-label="Fechar menu" data-drawer-close></button>
+
+    <aside class="lp-drawer__sheet" aria-label="Menu">
+      <div class="lp-drawer__section">
+        <a class="lp-drawer__link" href="#minha-pontuacao">Minha pontuação</a>
+        <a class="lp-drawer__link" href="#marketing">Marketing</a>
+        <a class="lp-drawer__link" href="#meus-clientes">Meus clientes</a>
+        <a class="lp-drawer__link" href="#faq">Perguntas</a>
+        <a class="lp-drawer__link" href="#ganhadores">Ganhadores</a>
+      </div>
+
+      <div class="lp-drawer__footer">
+        <div class="lp-drawer__copy">© <span data-year></span> Solfácil Energia Solar Ltda.</div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/demo.js"></script>
+</body>
+</html>
