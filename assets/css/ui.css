@@ -1,0 +1,13 @@
+
+.ui-infobar{background:#1faa59;color:#fff;text-align:center;padding:10px}
+.ui-infobar a{color:#fff;text-decoration:underline;cursor:pointer}
+.ui-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);z-index:9999}
+.ui-modal.is-open{display:flex}
+.ui-modal__box{background:#fff;border-radius:12px;width:95%;max-width:900px;max-height:90vh;overflow:auto;padding:24px}
+.ui-modal__header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.ui-modal__close{cursor:pointer;font-size:20px}
+.ui-tabs{display:flex;gap:12px;margin-bottom:12px}
+.ui-tab{padding:6px 12px;border-radius:20px;background:#eee;cursor:pointer}
+.ui-tab.is-active{background:#1faa59;color:#fff}
+.ui-numbers{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:10px}
+.ui-number{background:#1faa59;color:#fff;padding:8px;border-radius:20px;text-align:center}
