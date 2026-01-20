@@ -5,6 +5,12 @@
 .ui-infobar__inner{max-width:1120px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
 .ui-infobar a{color:#fff;text-decoration:underline}
 
+.ui-infobar{
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
 .ui-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:10000}
 .ui-modal.is-open{display:flex}
 .ui-modal__overlay{position:absolute;inset:0;background:rgba(0,0,0,.55)}
