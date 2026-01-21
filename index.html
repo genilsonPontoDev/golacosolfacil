@@ -16,6 +16,7 @@
   <script src="assets/js/ui.js" defer></script>
   <script src="assets/js/lp-v2.js" defer></script>
   <script src="assets/js/lp-topbar.js" defer></script>
+  <script src="assets/js/modals.js" defer></script>
 </head>
 
 <body class="page lp2">
@@ -301,6 +302,81 @@
   <!-- MODAIS (mantidos do projeto atual) -->
   <!-- COLE AQUI EXATAMENTE O BLOCO DE MODAIS QUE JÁ EXISTE NO SEU index.html ATUAL -->
   <!-- (do primeiro <div class="ui-modal" ...> até antes de </body>) -->
+
+  <!-- MODAL: REGULAMENTO -->
+  <!-- MODAL: REGULAMENTO (versão Figma) -->
+  <div class="ui-modal ui-modal--rules" id="modal-rules" aria-hidden="true">
+    <div class="ui-modal__backdrop" data-ui-close></div>
+
+    <div class="ui-modal__panel ui-modal__panel--rules" role="dialog" aria-modal="true"
+      aria-labelledby="modal-rules-title">
+      <button class="rules-modal__close" type="button" aria-label="Fechar" data-ui-close>×</button>
+
+      <!-- Top Banner -->
+      <div class="rules-modal__hero" aria-hidden="true">
+        <div class="rules-modal__hero-inner">
+          <div class="rules-modal__hero-title">
+            <div class="rules-modal__hero-line rules-modal__hero-line--green">Golaço</div>
+            <div class="rules-modal__hero-line rules-modal__hero-line--green">Solfácil</div>
+
+            <div class="rules-modal__hero-plus">
+              <span class="rules-modal__hero-plus-sign">+</span>
+              <span class="rules-modal__hero-plus-num">15</span>
+              <span class="rules-modal__hero-plus-mil">mil</span>
+            </div>
+
+            <div class="rules-modal__hero-line rules-modal__hero-line--white">em prêmios</div>
+          </div>
+
+          <img class="rules-modal__hero-logo" src="assets/img/solfacil-logo.png" alt="Solfácil" />
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="rules-modal__content">
+        <h2 class="rules-modal__h1" id="modal-rules-title">Regras da Campanha</h2>
+
+        <div class="rules-modal__box">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+          <ol class="rules-modal__list">
+            <li>
+              Nunc cursus venenatis urna ut aliquam. Sed tincidunt eu leo eget placerat. Curabitur at augue tellus.
+              Suspendisse vitae erat et elit consectetur sollicitudin. Nam non diam sapien. Nulla consectetur lectus non
+              est ullamcorper placerat. Cras ultrices, eros et iaculis tempor, libero nisi imperdiet arcu, eget pharetra
+              nisi lorem sed ligula. Nulla luctus maximus porttitor.
+            </li>
+            <li>
+              In vestibulum quam at leo tincidunt, eu fringilla libero lacinia. Class aptent taciti sociosqu ad litora
+              torquent per conubia nostra, per inceptos himenaeos.
+            </li>
+          </ol>
+
+          <p>
+            Etiam vel urna ac magna posuere viverra nec vitae metus. Aenean facilisis, urna et rhoncus facilisis, ex
+            nunc
+            aliquam erat, at cursus leo nisi eu nisl.
+          </p>
+        </div>
+
+        <form class="rules-modal__form" action="#" onsubmit="event.preventDefault();">
+          <label class="rules-modal__label" for="rules-cnpj">CNPJ</label>
+          <input class="rules-modal__input" id="rules-cnpj" name="cnpj" inputmode="numeric" autocomplete="off"
+            placeholder="Insira seu CNPJ para aderir a campanha" />
+
+          <label class="rules-modal__check">
+            <input class="rules-modal__check-input" type="checkbox" checked />
+            <span class="rules-modal__check-box" aria-hidden="true"></span>
+            <span class="rules-modal__check-text">Aceito os Termos e Condições da Campanha</span>
+          </label>
+
+          <button class="rules-modal__submit" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 
 </body>
 

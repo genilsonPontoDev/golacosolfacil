@@ -76,3 +76,274 @@
   .ui-grid2{grid-template-columns:1fr}
   .ui-btn--ghost{flex:1}
 }
+
+.ui-modal{ position:fixed; inset:0; z-index:999; display:none; }
+.ui-modal.is-open{ display:block; }
+
+.ui-modal__backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.55); }
+
+.ui-modal__panel{
+  position:relative;
+  width:min(720px, calc(100vw - 32px));
+  margin:72px auto 24px;
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.35);
+  transform: translateY(10px);
+  opacity:0;
+  transition:.18s ease;
+}
+.ui-modal.is-open .ui-modal__panel{ transform:translateY(0); opacity:1; }
+
+.ui-modal__header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:14px 16px; border-bottom:1px solid #eee;
+}
+.ui-modal__body{ padding:16px; max-height:min(70vh, 640px); overflow:auto; }
+.ui-modal__close{ border:0; background:transparent; font-size:18px; cursor:pointer; }
+
+body.modal-open{ overflow:hidden; }
+
+
+/* =========================================================
+   MODAL REGULAMENTO - match referência
+   ========================================================= */
+
+.ui-modal--rules{ z-index: 999; }
+.ui-modal__panel--rules{
+  width: min(860px, calc(100vw - 24px));
+  margin: 28px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+  position: relative;
+}
+
+/* botão fechar no topo do banner */
+.rules-modal__close{
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(0,0,0,.25);
+  color: #fff;
+  font-size: 22px;
+  line-height: 34px;
+  cursor: pointer;
+}
+.rules-modal__close:hover{ background: rgba(0,0,0,.35); }
+
+/* Banner escuro com padrão */
+.rules-modal__hero{
+  position: relative;
+  height: 260px;
+  background: #171717;
+  overflow: hidden;
+}
+
+/* padrão tipo “círculos” (aproxima o artwork) */
+.rules-modal__hero::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  opacity:.22;
+  background:
+    radial-gradient(circle at 15% 25%, transparent 0 32px, rgba(255,255,255,.35) 33px 34px, transparent 35px),
+    radial-gradient(circle at 85% 20%, transparent 0 44px, rgba(255,255,255,.25) 45px 46px, transparent 47px),
+    radial-gradient(circle at 70% 80%, transparent 0 52px, rgba(255,255,255,.20) 53px 54px, transparent 55px),
+    radial-gradient(circle at 25% 75%, transparent 0 46px, rgba(255,255,255,.20) 47px 48px, transparent 49px),
+    radial-gradient(circle at 45% 40%, transparent 0 40px, rgba(255,255,255,.16) 41px 42px, transparent 43px);
+  filter: blur(.2px);
+}
+
+.rules-modal__hero-inner{
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 16px;
+  text-align:center;
+}
+
+.rules-modal__hero-title{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 6px;
+  transform: translateY(4px);
+}
+
+/* Tipografia “forte” */
+.rules-modal__hero-line{
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  line-height: .92;
+  font-size: clamp(38px, 6vw, 58px);
+}
+.rules-modal__hero-line--green{ color: #b9ff00; }
+.rules-modal__hero-line--white{ color: #fff; }
+
+.rules-modal__hero-plus{
+  display:flex;
+  align-items:flex-end;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  color:#fff;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: .9;
+}
+.rules-modal__hero-plus-sign{
+  font-size: clamp(34px, 5vw, 56px);
+  transform: translateY(-2px);
+}
+.rules-modal__hero-plus-num{
+  font-size: clamp(64px, 10vw, 110px);
+}
+.rules-modal__hero-plus-mil{
+  font-size: clamp(28px, 4.5vw, 58px);
+  text-transform: uppercase;
+  transform: translateY(-8px);
+}
+
+.rules-modal__hero-logo{
+  position:absolute;
+  right: 18px;
+  bottom: 16px;
+  height: 20px;
+  width: auto;
+  opacity: .95;
+}
+
+/* Conteúdo */
+.rules-modal__content{
+  padding: 18px 18px 20px;
+}
+.rules-modal__h1{
+  margin: 4px 0 14px;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  color:#111;
+}
+
+.rules-modal__box{
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 14px 14px;
+  background: #fff;
+}
+.rules-modal__box p{
+  margin: 0 0 10px;
+  color:#222;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.rules-modal__list{
+  margin: 8px 0 12px 18px;
+  padding: 0;
+  color:#222;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.rules-modal__list li{ margin: 0 0 10px; }
+
+/* Form */
+.rules-modal__form{ margin-top: 14px; }
+.rules-modal__label{
+  display:block;
+  font-size: 12px;
+  color:#111;
+  font-weight: 700;
+  margin: 10px 0 8px;
+}
+
+.rules-modal__input{
+  width: 100%;
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+}
+.rules-modal__input:focus{
+  border-color: rgba(102,198,28,.55);
+  box-shadow: 0 0 0 4px rgba(102,198,28,.15);
+}
+
+/* Checkbox estilo */
+.rules-modal__check{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin: 14px 0 16px;
+  user-select:none;
+  cursor:pointer;
+}
+.rules-modal__check-input{ position:absolute; opacity:0; pointer-events:none; }
+.rules-modal__check-box{
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #cfcfcf;
+  background:#fff;
+  display:inline-block;
+  position:relative;
+  flex: 0 0 auto;
+}
+.rules-modal__check-input:checked + .rules-modal__check-box{
+  background: #2f9f0d;
+  border-color: #2f9f0d;
+}
+.rules-modal__check-input:checked + .rules-modal__check-box::after{
+  content:"";
+  position:absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+}
+.rules-modal__check-text{
+  font-size: 14px;
+  color:#111;
+}
+
+/* Botão */
+.rules-modal__submit{
+  width: 100%;
+  height: 52px;
+  border-radius: 8px;
+  border: 0;
+  background: #2f9f0d;
+  color:#fff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor:pointer;
+}
+.rules-modal__submit:hover{ filter: brightness(.97); }
+
+/* Mobile: ocupa mais a tela e ajusta título */
+@media (max-width: 520px){
+  .ui-modal__panel--rules{
+    width: calc(100vw - 16px);
+    margin: 18px auto;
+    border-radius: 12px;
+  }
+  .rules-modal__hero{ height: 240px; }
+  .rules-modal__h1{ font-size: 34px; }
+}
