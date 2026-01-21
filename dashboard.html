@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,6 +14,7 @@
   <!-- seus scripts atuais (mantidos) -->
   <script src="assets/js/demo.js" defer></script>
   <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/modals.js" defer></script>
 
   <!-- novo -->
   <script src="assets/js/dashboard-v2.js" defer></script>
@@ -33,8 +35,10 @@
         <div class="db2-dd" data-dd>
           <button class="db2-dd__trigger" type="button" data-dd-trigger>Integrador ▾</button>
           <div class="db2-dd__menu" role="menu">
-            <a class="db2-dd__item" href="#" data-scroll-to="#db2-progress">Meu Progresso <span class="db2-dd__badge">Trilha</span></a>
-            <a class="db2-dd__item" href="#" data-ui-open="#modal-filter">Números da sorte <span class="db2-dd__badge">Filtro</span></a>
+            <a class="db2-dd__item" href="#" data-scroll-to="#db2-progress">Meu Progresso <span
+                class="db2-dd__badge">Trilha</span></a>
+            <a class="db2-dd__item" href="#" data-ui-open="#modal-filter">Números da sorte <span
+                class="db2-dd__badge">Filtro</span></a>
             <a class="db2-dd__item" href="#" data-scroll-to="#db2-marketing">Marketing</a>
           </div>
         </div>
@@ -42,7 +46,8 @@
         <div class="db2-dd" data-dd>
           <button class="db2-dd__trigger" type="button" data-dd-trigger>Cliente Final ▾</button>
           <div class="db2-dd__menu" role="menu">
-            <a class="db2-dd__item" href="#" data-scroll-to="#db2-client">Área do Cliente <span class="db2-dd__badge">Clientes</span></a>
+            <a class="db2-dd__item" href="#" data-scroll-to="#db2-client">Área do Cliente <span
+                class="db2-dd__badge">Clientes</span></a>
             <a class="db2-dd__item" href="#" data-scroll-to="#db2-winners">Ganhadores</a>
             <a class="db2-dd__item" href="#" data-ui-open="#modal-rules">Regulamento</a>
           </div>
@@ -61,7 +66,7 @@
   <!-- HERO (dark) -->
   <section class="db2-hero" id="db2-hero">
     <div class="container">
-      <h1>Campanha<br/>Golaço da Solfácil</h1>
+      <h1>Campanha<br />Golaço da Solfácil</h1>
       <p>
         Mais de 100 prêmios para você e seus clientes entrarem em campo e marcarem um golaço com a Solfácil.
       </p>
@@ -103,7 +108,8 @@
         <article class="db2-card">
           <div class="db2-card__body">
             <h3 class="db2-card__title">Meus Clientes</h3>
-            <p class="db2-card__desc">Acompanhe os números da sorte dos seus clientes e veja quem já está participando.</p>
+            <p class="db2-card__desc">Acompanhe os números da sorte dos seus clientes e veja quem já está participando.
+            </p>
             <a class="db2-card__cta" href="#" data-scroll-to="#db2-client">Ver meus clientes</a>
           </div>
         </article>
@@ -135,8 +141,10 @@
 
           <div class="db2-progress__top">
             <span class="db2-chip">📌 Sua Trilha de Faturamento</span>
-            <span class="db2-chip">Você tem <b data-ui-luckynum-total>0</b> números da sorte acumulados para o prêmio final.</span>
-            <a class="db2-chip" href="#" data-ui-open="#modal-filter" style="text-decoration:none; font-weight:800;">Como ganhar mais números da sorte</a>
+            <span class="db2-chip">Você tem <b data-ui-luckynum-total>0</b> números da sorte acumulados para o prêmio
+              final.</span>
+            <a class="db2-chip" href="#" data-ui-open="#modal-filter"
+              style="text-decoration:none; font-weight:800;">Como ganhar mais números da sorte</a>
           </div>
 
           <div class="db2-progress__grid">
@@ -159,7 +167,8 @@
                 </div>
 
                 <div style="margin-top:10px;">
-                  <a class="db2-btn db2-btn--primary" href="#" data-ui-open="#modal-filter" style="padding:10px 14px;">Ver números da sorte</a>
+                  <a class="db2-btn db2-btn--primary" href="#" data-ui-open="#modal-filter"
+                    style="padding:10px 14px;">Ver números da sorte</a>
                 </div>
 
                 <p style="margin:10px 0 0; font-size:11px; color:#9ca3af;">
@@ -171,14 +180,17 @@
             <!-- right "trilha" placeholder -->
             <div class="db2-box">
               <p style="margin:0 0 10px; font-size:11px; color:#6b7280;">
-                (Aqui entra a trilha detalhada 1:1 do componente “Comp Trilha [1.0]”. Eu encaixo no próximo passo com DOM certinho.)
+                (Aqui entra a trilha detalhada 1:1 do componente “Comp Trilha [1.0]”. Eu encaixo no próximo passo com
+                DOM certinho.)
               </p>
 
-              <div style="height: 150px; border:1px dashed #dadada; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-size:12px;">
+              <div
+                style="height: 150px; border:1px dashed #dadada; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-size:12px;">
                 Placeholder Trilha
               </div>
 
-              <div style="margin-top:10px; height: 12px; border-radius:999px; background: rgba(102,198,28,.18); overflow:hidden;">
+              <div
+                style="margin-top:10px; height: 12px; border-radius:999px; background: rgba(102,198,28,.18); overflow:hidden;">
                 <div style="width: 60%; height:100%; background:#138a3c;"></div>
               </div>
             </div>
@@ -226,7 +238,8 @@
       <!-- COMO FUNCIONA (INTEGRADOR) -->
       <h2 class="db2-section-title" id="db2-how-integrador">Como Funciona</h2>
       <p class="db2-section-sub">
-        Cada R$ 5.000 em compras faturadas gera 1 número da sorte. Você pode dobrar ou triplicar suas chances com Combo Fácil e equipamentos participantes.
+        Cada R$ 5.000 em compras faturadas gera 1 número da sorte. Você pode dobrar ou triplicar suas chances com Combo
+        Fácil e equipamentos participantes.
       </p>
 
       <section class="db2-steps">
@@ -298,11 +311,13 @@
             <label style="display:flex; gap:10px; align-items:center; font-size:12px; margin-top:6px;">
               <input type="radio" name="cor" /> Cor personalizada
             </label>
-            <input type="color" value="#138a3c" style="margin-top:10px; width:100%; height:38px; border:1px solid #ececec; border-radius:10px;" />
+            <input type="color" value="#138a3c"
+              style="margin-top:10px; width:100%; height:38px; border:1px solid #ececec; border-radius:10px;" />
           </div>
 
           <div style="display:flex; gap:10px;">
-            <button class="db2-btn db2-btn--ghost" type="button" style="border-color:#e7e7e7; color:#111;">Limpar</button>
+            <button class="db2-btn db2-btn--ghost" type="button"
+              style="border-color:#e7e7e7; color:#111;">Limpar</button>
             <button class="db2-btn db2-btn--primary" type="button">Gerar Prévia/Atualizar</button>
           </div>
         </div>
@@ -415,7 +430,8 @@
               <span class="lp2-faq__icon" aria-hidden="true"></span>
             </summary>
             <div class="lp2-faq__content">
-              <p>Campanha promocional onde integradores e clientes finais concorrem a prêmios ao realizar compras/financiamentos na Solfácil.</p>
+              <p>Campanha promocional onde integradores e clientes finais concorrem a prêmios ao realizar
+                compras/financiamentos na Solfácil.</p>
             </div>
           </details>
         </div>
@@ -442,7 +458,8 @@
                   <td>Categoria A</td>
                   <td>TV 40" + Vale Netshoes</td>
                   <td><span class="db2-pill">Aguardando</span></td>
-                  <td style="text-align:right;"><a class="db2-card__cta" href="#" data-ui-open="#modal-filter">Confira os ganhadores</a></td>
+                  <td style="text-align:right;"><a class="db2-card__cta" href="#" data-ui-open="#modal-filter">Confira
+                      os ganhadores</a></td>
                 </tr>
               </tbody>
             </table>
@@ -470,5 +487,79 @@
   <!-- MODAIS (mantenha os seus do projeto antigo) -->
   <!-- Cole aqui: modal-filter + modal-rules + etc, exatamente como você fez na LP -->
 
+  <!-- MODAL: REGULAMENTO -->
+  <!-- MODAL: REGULAMENTO (versão Figma) -->
+  <div class="ui-modal ui-modal--rules" id="modal-rules" aria-hidden="true">
+    <div class="ui-modal__backdrop" data-ui-close></div>
+
+    <div class="ui-modal__panel ui-modal__panel--rules" role="dialog" aria-modal="true"
+      aria-labelledby="modal-rules-title">
+      <button class="rules-modal__close" type="button" aria-label="Fechar" data-ui-close>×</button>
+
+      <!-- Top Banner -->
+      <div class="rules-modal__hero" aria-hidden="true">
+        <div class="rules-modal__hero-inner">
+          <div class="rules-modal__hero-title">
+            <div class="rules-modal__hero-line rules-modal__hero-line--green">Golaço</div>
+            <div class="rules-modal__hero-line rules-modal__hero-line--green">Solfácil</div>
+
+            <div class="rules-modal__hero-plus">
+              <span class="rules-modal__hero-plus-sign">+</span>
+              <span class="rules-modal__hero-plus-num">15</span>
+              <span class="rules-modal__hero-plus-mil">mil</span>
+            </div>
+
+            <div class="rules-modal__hero-line rules-modal__hero-line--white">em prêmios</div>
+          </div>
+
+          <img class="rules-modal__hero-logo" src="assets/img/solfacil-logo.png" alt="Solfácil" />
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="rules-modal__content">
+        <h2 class="rules-modal__h1" id="modal-rules-title">Regras da Campanha</h2>
+
+        <div class="rules-modal__box">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+          <ol class="rules-modal__list">
+            <li>
+              Nunc cursus venenatis urna ut aliquam. Sed tincidunt eu leo eget placerat. Curabitur at augue tellus.
+              Suspendisse vitae erat et elit consectetur sollicitudin. Nam non diam sapien. Nulla consectetur lectus non
+              est ullamcorper placerat. Cras ultrices, eros et iaculis tempor, libero nisi imperdiet arcu, eget pharetra
+              nisi lorem sed ligula. Nulla luctus maximus porttitor.
+            </li>
+            <li>
+              In vestibulum quam at leo tincidunt, eu fringilla libero lacinia. Class aptent taciti sociosqu ad litora
+              torquent per conubia nostra, per inceptos himenaeos.
+            </li>
+          </ol>
+
+          <p>
+            Etiam vel urna ac magna posuere viverra nec vitae metus. Aenean facilisis, urna et rhoncus facilisis, ex
+            nunc
+            aliquam erat, at cursus leo nisi eu nisl.
+          </p>
+        </div>
+
+        <form class="rules-modal__form" action="#" onsubmit="event.preventDefault();">
+          <label class="rules-modal__label" for="rules-cnpj">CNPJ</label>
+          <input class="rules-modal__input" id="rules-cnpj" name="cnpj" inputmode="numeric" autocomplete="off"
+            placeholder="Insira seu CNPJ para aderir a campanha" />
+
+          <label class="rules-modal__check">
+            <input class="rules-modal__check-input" type="checkbox" checked />
+            <span class="rules-modal__check-box" aria-hidden="true"></span>
+            <span class="rules-modal__check-text">Aceito os Termos e Condições da Campanha</span>
+          </label>
+
+          <button class="rules-modal__submit" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
+
 </html>
