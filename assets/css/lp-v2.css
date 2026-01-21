@@ -4,14 +4,34 @@ body.lp2{
   color: var(--lp-text);
 }
 
-/* Header sobre o hero */
+/* =========================
+   HEADER (GLASS) - ÚNICO
+   ========================= */
 .lp2-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 80;
+  padding: 14px 0;
+
+  background: rgba(34,34,34,.12);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+.lp2-header::before{
+  content:"";
   position:absolute;
-  inset: 0 0 auto 0;
-  z-index: 50;
-  padding: 18px 0;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.22),
+    rgba(0,0,0,.10)
+  );
 }
 .lp2-header__inner{
+  position: relative;
+  z-index: 1;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -19,7 +39,23 @@ body.lp2{
 }
 .lp2-brand__logo{ height: 22px; width: auto; display:block; }
 
-/* Botões */
+.lp2-header.is-solid{
+  background: rgba(17,17,17,.22);
+  border-bottom-color: rgba(255,255,255,.18);
+}
+.lp2-header.is-solid::before{ background: rgba(0,0,0,.22); }
+
+/* =========================
+   OFFSET POR CSS VAR - ÚNICO
+   (JS seta --lp2-header-h real)
+   ========================= */
+:root{ --lp2-header-h: 64px; } /* fallback */
+
+body.lp2{ padding-top: var(--lp2-header-h); }
+
+/* =========================
+   BOTÕES
+   ========================= */
 .lp2-btn{
   display:inline-flex;
   align-items:center;
@@ -36,9 +72,9 @@ body.lp2{
   user-select:none;
 }
 .lp2-btn--ghost{
-  background: #fff;
-  border-color: #fff;
-  color: #111;
+  background: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.92);
+  color:#111;
 }
 .lp2-btn--primary{
   background: #2b2b2b;
@@ -51,15 +87,22 @@ body.lp2{
   color: #222;
 }
 
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .lp2-hero{
-  position:relative;
+  position: relative;
   min-height: 520px;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+
+  /* offset do header (hero começa no topo) */
+  margin-top: calc(var(--lp2-header-h) * -1);
+  padding-top: var(--lp2-header-h);
 }
+
 .lp2-hero__bg{
   position:absolute; inset:0;
   background: url("../img/hero.jpg") center/cover no-repeat;
@@ -70,10 +113,12 @@ body.lp2{
   background: radial-gradient(ellipse at center, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 70%);
 }
 .lp2-hero__inner{
-  position:relative;
+  position: relative;
   z-index: 1;
-  padding: 92px 0 54px;
   max-width: 860px;
+
+  /* respeita o header SEM chute de breakpoint */
+  padding: calc(var(--lp2-header-h) + 28px) 0 54px;
 }
 .lp2-hero__pill{
   display:inline-flex;
@@ -99,10 +144,10 @@ body.lp2{
   font-size: 14px;
 }
 
-/* INFOBAR */
-.lp2-infobar{
-  padding: 18px 0 0;
-}
+/* =========================
+   INFOBAR
+   ========================= */
+.lp2-infobar{ padding: 18px 0 0; }
 .lp2-infobar__bar{
   background: var(--lp-green);
   color: #fff;
@@ -116,26 +161,17 @@ body.lp2{
   font-size: 12px;
 }
 .lp2-infobar__link{ color:#fff; text-decoration: underline; font-weight:600; }
-.lp2-infobar__sep{
-  width: 1px; height: 14px;
-  background: rgba(255,255,255,.6);
-}
+.lp2-infobar__sep{ width: 1px; height: 14px; background: rgba(255,255,255,.6); }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+   ========================= */
 .lp2-section{ padding: 44px 0; }
 .lp2-section--soft{ background: #f6f7f8; }
 .lp2-section__header{ margin-bottom: 18px; }
 .lp2-section__header--center{ text-align:center; }
-.lp2-section__title{
-  margin: 0;
-  font-size: 22px;
-  letter-spacing: -0.01em;
-}
-.lp2-section__subtitle{
-  margin: 8px 0 0;
-  color: var(--lp-muted);
-  font-size: 12px;
-}
+.lp2-section__title{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+.lp2-section__subtitle{ margin: 8px 0 0; color: var(--lp-muted); font-size: 12px; }
 .lp2-section__mark{
   display:inline-block;
   width: 14px; height: 3px;
@@ -145,13 +181,8 @@ body.lp2{
 }
 
 /* Cards (Para você / Para seu Cliente) */
-.lp2-cards{
-  display:grid;
-  gap: 18px;
-}
-.lp2-cards--2{
-  grid-template-columns: repeat(2, minmax(0,1fr));
-}
+.lp2-cards{ display:grid; gap: 18px; }
+.lp2-cards--2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 .lp2-card{
   background: #fff;
   border: 1px solid #ececec;
@@ -174,10 +205,7 @@ body.lp2{
   -webkit-mask: radial-gradient(circle at 30% 60%, transparent 6px, #000 7px) left/14px 14px no-repeat;
           mask: radial-gradient(circle at 30% 60%, transparent 6px, #000 7px) left/14px 14px no-repeat;
 }
-.lp2-icon--shield{
-  background: var(--lp-green);
-  border-radius: 3px;
-}
+.lp2-icon--shield{ background: var(--lp-green); border-radius: 3px; }
 .lp2-card__title{ margin: 0 0 6px; font-size: 14px; }
 .lp2-card__text{ margin: 0 0 12px; color: var(--lp-muted); font-size: 12px; line-height: 1.5; }
 .lp2-card__btn{ padding: 9px 16px; }
@@ -195,11 +223,7 @@ body.lp2{
   border-radius: 10px;
   overflow:hidden;
 }
-.lp2-step__media{
-  background: var(--lp-green);
-  height: 140px;
-  position:relative;
-}
+.lp2-step__media{ background: var(--lp-green); height: 140px; position:relative; }
 .lp2-illus{
   position:absolute; inset:0;
   opacity: .20;
@@ -214,12 +238,7 @@ body.lp2{
 .lp2-step__btn{ padding: 9px 16px; }
 
 /* FAQ */
-.lp2-faq{
-  background: #fff;
-  border: 1px solid #ececec;
-  border-radius: 10px;
-  overflow:hidden;
-}
+.lp2-faq{ background: #fff; border: 1px solid #ececec; border-radius: 10px; overflow:hidden; }
 .lp2-faq__item{ border-top: 1px solid #f0f0f0; }
 .lp2-faq__item:first-child{ border-top: 0; }
 .lp2-faq__summary{
@@ -239,8 +258,7 @@ body.lp2{
   font-size: 12px;
   font-weight: 600;
 }
-.lp2-faq__n{ color: #111; }
-.lp2-faq__t{ color: #111; }
+.lp2-faq__n, .lp2-faq__t{ color:#111; }
 .lp2-faq__icon{
   width: 22px; height: 22px;
   border: 1px solid #e7e7e7;
@@ -260,7 +278,6 @@ body.lp2{
 .lp2-faq__icon::before{ width:10px; height:2px; }
 .lp2-faq__icon::after{ width:2px; height:10px; }
 .lp2-faq__item[open] .lp2-faq__icon::after{ display:none; }
-
 .lp2-faq__content{
   padding: 0 16px 14px;
   color: var(--lp-muted);
@@ -268,13 +285,7 @@ body.lp2{
   line-height: 1.55;
 }
 .lp2-faq__content p{ margin: 0; }
-
-.lp2-faq__more{
-  display:flex;
-  justify-content:center;
-  padding: 18px 0 8px;
-  background: transparent;
-}
+.lp2-faq__more{ display:flex; justify-content:center; padding: 18px 0 8px; background: transparent; }
 .lp2-faq__hidden{ display:none; }
 
 /* Footer */
@@ -316,6 +327,18 @@ body.lp2{
   .lp2-footer__inner{ grid-template-columns: 1fr; }
 }
 @media (max-width: 520px){
-  .lp2-hero__inner{ padding-top: 84px; }
   .lp2-hero__subtitle br{ display:none; }
+}
+
+/* =========================
+   FIX: LP não pode herdar padding-top do layout base (.page__content)
+   ========================= */
+body.lp2 .page__content{
+  padding-top: 0 !important;
+}
+
+/* garante o offset do hero mesmo se algum CSS sobrescrever */
+body.lp2 .lp2-hero{
+  margin-top: calc(var(--lp2-header-h) * -1) !important;
+  padding-top: var(--lp2-header-h) !important;
 }

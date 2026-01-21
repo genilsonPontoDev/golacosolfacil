@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Golaço da Solfácil</title>
-  <meta name="description" content="Participe da campanha Golaço da Solfácil e concorra a prêmios enquanto pontua e economiza com energia limpa e renovável." />
+  <meta name="description"
+    content="Participe da campanha Golaço da Solfácil e concorra a prêmios enquanto pontua e economiza com energia limpa e renovável." />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/ui.css" />
@@ -13,6 +15,7 @@
   <script src="assets/js/lucky-demo.js" defer></script>
   <script src="assets/js/ui.js" defer></script>
   <script src="assets/js/lp-v2.js" defer></script>
+  <script src="assets/js/lp-topbar.js" defer></script>
 </head>
 
 <body class="page lp2">
@@ -27,6 +30,16 @@
       <a class="lp2-btn lp2-btn--ghost" href="dashboard.html">Login</a>
     </div>
   </header>
+
+  <!-- FIX: seta a altura do header ANTES do hero pintar (remove o "pulo" no mobile) -->
+  <script>
+    (function () {
+      var header = document.querySelector('.lp2-header');
+      if (!header) return;
+      var h = Math.ceil(header.getBoundingClientRect().height);
+      if (h) document.documentElement.style.setProperty('--lp2-header-h', h + 'px');
+    })();
+  </script>
 
   <main class="page__content" id="top">
 
@@ -117,7 +130,8 @@
             <div class="lp2-step__body">
               <h3 class="lp2-step__title"><strong>1 número</strong></h3>
               <p class="lp2-step__text">Compra separada na Loja Solfácil ou financiamento com a Solfácil.</p>
-              <a class="lp2-btn lp2-btn--outline lp2-step__btn" href="#" target="_blank" rel="noopener">Compre na Loja</a>
+              <a class="lp2-btn lp2-btn--outline lp2-step__btn" href="#" target="_blank" rel="noopener">Compre na
+                Loja</a>
             </div>
           </article>
 
@@ -128,7 +142,8 @@
             <div class="lp2-step__body">
               <h3 class="lp2-step__title"><strong>2 números</strong></h3>
               <p class="lp2-step__text">Compra via Combo Fácil ou sistema com bateria na Solfácil.</p>
-              <a class="lp2-btn lp2-btn--outline lp2-step__btn" href="#" target="_blank" rel="noopener">Compre na Loja</a>
+              <a class="lp2-btn lp2-btn--outline lp2-step__btn" href="#" target="_blank" rel="noopener">Compre na
+                Loja</a>
             </div>
           </article>
 
@@ -139,7 +154,8 @@
             <div class="lp2-step__body">
               <h3 class="lp2-step__title"><strong>3 números</strong></h3>
               <p class="lp2-step__text">Combo Fácil + sistema de baterias (quando aplicável).</p>
-              <a class="lp2-btn lp2-btn--outline lp2-step__btn" href="#" target="_blank" rel="noopener">Compre na Loja</a>
+              <a class="lp2-btn lp2-btn--outline lp2-step__btn" href="#" target="_blank" rel="noopener">Compre na
+                Loja</a>
             </div>
           </article>
         </div>
@@ -166,7 +182,9 @@
             </summary>
             <div class="lp2-faq__content">
               <p>
-                A Golaço da Solfácil é uma campanha promocional onde integradores e clientes finais concorrem a prêmios ao realizar compras e financiamentos através da Solfácil. Quanto mais você compra, mais números da sorte você acumula, e mais chances de ganhar.
+                A Golaço da Solfácil é uma campanha promocional onde integradores e clientes finais concorrem a prêmios
+                ao realizar compras e financiamentos através da Solfácil. Quanto mais você compra, mais números da sorte
+                você acumula, e mais chances de ganhar.
               </p>
             </div>
           </details>
@@ -180,7 +198,8 @@
               <span class="lp2-faq__icon" aria-hidden="true"></span>
             </summary>
             <div class="lp2-faq__content">
-              <p>Confira o período na barra de campanha e no regulamento oficial. Datas podem variar conforme o regulamento vigente.</p>
+              <p>Confira o período na barra de campanha e no regulamento oficial. Datas podem variar conforme o
+                regulamento vigente.</p>
             </div>
           </details>
 
@@ -193,7 +212,8 @@
               <span class="lp2-faq__icon" aria-hidden="true"></span>
             </summary>
             <div class="lp2-faq__content">
-              <p>Integradores e clientes finais elegíveis, conforme critérios do regulamento. Em caso de dúvida, consulte o regulamento.</p>
+              <p>Integradores e clientes finais elegíveis, conforme critérios do regulamento. Em caso de dúvida,
+                consulte o regulamento.</p>
             </div>
           </details>
 
@@ -219,7 +239,8 @@
               <span class="lp2-faq__icon" aria-hidden="true"></span>
             </summary>
             <div class="lp2-faq__content">
-              <p>Números são atribuídos conforme as regras de compra/financiamento descritas no regulamento. Cada jornada pode gerar 1, 2 ou 3 números.</p>
+              <p>Números são atribuídos conforme as regras de compra/financiamento descritas no regulamento. Cada
+                jornada pode gerar 1, 2 ou 3 números.</p>
             </div>
           </details>
 
@@ -282,4 +303,5 @@
   <!-- (do primeiro <div class="ui-modal" ...> até antes de </body>) -->
 
 </body>
+
 </html>
