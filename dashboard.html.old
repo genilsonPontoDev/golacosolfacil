@@ -1,0 +1,653 @@
+<!doctype html>
+
+  <div class="ui-infobar">
+    <div class="ui-infobar__inner">
+      <span>Campanha válida <strong data-ui-period>—</strong></span>
+      <button class="ui-link" type="button" data-ui-open="#modal-regras">Conferir regulamento</button>
+    </div>
+  </div>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golaço da Solfácil • Área Logada</title>
+  <meta name="description" content="Acompanhe sua pontuação, trilha de faturamento e números da sorte na campanha Golaço da Solfácil." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/ui.css" />
+  <script defer src="assets/js/lucky-demo.js"></script>
+  <script defer src="assets/js/ui.js"></script>
+</head>
+
+<body class="page page--dashboard">
+  <!-- HEADER (shared) -->
+  <header class="lp-header lp-header--solid">
+    <div class="container lp-header__inner">
+      <button class="lp-header__burger" type="button" aria-label="Abrir menu" data-drawer-open>
+        <span class="lp-icon lp-icon--burger" aria-hidden="true"></span>
+      </button>
+
+      <a class="lp-brand" href="index.html" aria-label="Voltar para a Landing">
+        <img class="lp-brand__logo" src="assets/img/solfacil-logo.png" alt="Solfácil" />
+      </a>
+
+      <nav class="lp-nav" aria-label="Navegação">
+        <a class="lp-nav__link" href="#minha-pontuacao">Minha pontuação</a>
+        <a class="lp-nav__link" href="#marketing">Marketing</a>
+        <a class="lp-nav__link" href="#meus-clientes">Meus clientes</a>
+        <a class="lp-nav__link" href="#faq">Perguntas</a>
+      </nav>
+
+      <div class="lp-header__actions">
+        <label class="db-profile" aria-label="Perfil demo">
+          <span class="db-profile__label">Demo</span>
+          <select class="db-profile__select" data-profile-select>
+            <option value="integrador">Integrador</option>
+            <option value="cliente">Cliente final</option>
+          </select>
+        </label>
+        <a class="lp-btn lp-btn--outline lp-header__btn" href="index.html">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page__content" id="top">
+    <!-- HERO / COUNTDOWN -->
+    <section class="db-hero" aria-label="Campanha">
+      <div class="db-hero__bg" aria-hidden="true"></div>
+      <div class="db-hero__overlay" aria-hidden="true"></div>
+
+      <div class="container db-hero__inner">
+        <h1 class="db-hero__title">Campanha<br />Golaço da Solfácil</h1>
+        <p class="db-hero__subtitle" data-campaign-subtitle>
+          Acompanhe sua pontuação e confira seus números da sorte.
+        </p>
+
+        <div class="db-countdown" aria-label="Contagem regressiva">
+          <div class="db-countdown__label">Termina em</div>
+          <div class="db-countdown__time" data-countdown>--:--:--</div>
+          <div class="db-countdown__hint" data-period-hint></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK NAV CARDS -->
+    <section class="db-quick">
+      <div class="container">
+        <div class="db-quick__grid">
+          <a class="db-card" href="#minha-pontuacao">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Minha pontuação</div>
+            <div class="db-card__text">Trilha, metas e sorteios desbloqueados</div>
+          </a>
+          <a class="db-card" href="#marketing">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Marketing</div>
+            <div class="db-card__text">Materiais para divulgar a campanha</div>
+          </a>
+          <a class="db-card" href="#meus-clientes">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Meus clientes</div>
+            <div class="db-card__text">Acompanhe os números do cliente final</div>
+          </a>
+          <a class="db-card" href="#como-funciona">
+            <div class="db-card__icon" aria-hidden="true"></div>
+            <div class="db-card__title">Como funciona</div>
+            <div class="db-card__text">Regras, multiplicadores e elegibilidade</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="db-section" id="minha-pontuacao">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Meu Progresso na Campanha</h2>
+          <div class="db-section__actions">
+            <button class="lp-btn lp-btn--outline db-section__btn" type="button" data-refresh>Atualizar (demo)</button>
+          </div>
+        </header>
+
+        <div class="db-progress">
+          <div class="db-progress__left">
+            <div class="db-ring" aria-label="Progresso">
+              <div class="db-ring__value" data-progress-percent>0%</div>
+              <div class="db-ring__label">Meta atual</div>
+            </div>
+
+            <dl class="db-metrics">
+              <div class="db-metric">
+                <dt class="db-metric__label">Faturamento acumulado</dt>
+                <dd class="db-metric__value" data-revenue>R$ 0</dd>
+              </div>
+              <div class="db-metric">
+                <dt class="db-metric__label">Categoria</dt>
+                <dd class="db-metric__value" data-category>—</dd>
+              </div>
+              <div class="db-metric">
+                <dt class="db-metric__label">Números da sorte</dt>
+                <dd class="db-metric__value" data-lucky-total data-ui-open="#modal-lucky" data-ui-open="#ui-modal-lucky">0</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="db-progress__right">
+            <div class="db-track" aria-label="Trilha">
+              <div class="db-track__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-track-bar>
+                <span class="db-track__fill" data-track-fill></span>
+              </div>
+              <div class="db-track__steps" data-track-steps></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="db-panels">
+          <section class="db-panel">
+            <header class="db-panel__header">
+              <h3 class="db-panel__title">Metas atingidas</h3>
+            </header>
+            <ul class="db-list" data-achieved></ul>
+          </section>
+
+          <section class="db-panel">
+            <header class="db-panel__header">
+              <h3 class="db-panel__title">Sorteios desbloqueados</h3>
+            </header>
+            <ul class="db-list" data-unlocked></ul>
+          </section>
+
+          <section class="db-panel">
+            <header class="db-panel__header">
+              <h3 class="db-panel__title">Próximos prêmios</h3>
+            </header>
+            <ul class="db-list" data-next-prizes></ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETING -->
+    <section class="db-section" id="marketing">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Materiais de Marketing</h2>
+        </header>
+
+        <div class="db-marketing">
+          <div class="db-marketing__list" data-marketing-list></div>
+          <aside class="db-marketing__preview">
+            <div class="db-preview">
+              <div class="db-preview__canvas" data-marketing-preview>
+                Selecione um material para pré-visualizar (demo)
+              </div>
+              <div class="db-preview__actions">
+                <button class="lp-btn lp-btn--outline" type="button" data-marketing-download>Baixar (demo)</button>
+                <button class="lp-btn lp-btn--dark" type="button" data-marketing-copy>Copiar texto (demo)</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREA DO CLIENTE -->
+    <section class="db-section" id="meus-clientes">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Área do Cliente</h2>
+          <p class="db-section__subtitle">Visualize os números do cliente final (quando aplicável).</p>
+        </header>
+
+        <div class="db-client">
+          <a class="db-card db-card--wide" href="#" data-ui-open="#modal-lucky" data-client-integrator data-ui-open="#modal-lucky" data-ui-open="#modal-numeros" data-ui-open="#ui-modal-lucky" data-ui-open="#modal-numeros" data-ui-open="#modal-lucky" data-ui-open="#modal-lucky">
+            <div class="db-card__title">Números do Integrador</div>
+            <div class="db-card__text" data-client-integrator data-ui-open="#modal-lucky" data-ui-open="#modal-numeros" data-ui-open="#ui-modal-lucky"-text data-ui-open="#modal-lucky" data-ui-open="#modal-lucky">—</div>
+            <span class="db-card__cta">Acessar</span>
+          </a>
+          <a class="db-card db-card--wide" href="#" data-ui-open="#modal-lucky" data-client-final data-ui-open="#modal-lucky" data-ui-open="#modal-numeros" data-ui-open="#ui-modal-lucky" data-ui-open="#modal-numeros" data-ui-open="#modal-lucky" data-ui-open="#modal-lucky">
+            <div class="db-card__title">Números do Cliente</div>
+            <div class="db-card__text" data-client-final data-ui-open="#modal-lucky" data-ui-open="#modal-numeros" data-ui-open="#ui-modal-lucky"-text data-ui-open="#modal-lucky" data-ui-open="#modal-lucky">—</div>
+            <span class="db-card__cta">Acessar</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA (reaproveita estilo lp) -->
+    <section class="lp-section lp-section--soft" id="como-funciona">
+      <div class="container">
+        <header class="lp-section__header lp-section__header--center">
+          <h2 class="lp-section__title">Como Funciona</h2>
+          <p class="lp-section__subtitle">Resumo rápido do regulamento (demo). A fonte oficial é a API/Regulamento.</p>
+        </header>
+
+        <div class="lp-steps">
+          <article class="lp-step">
+            <span class="lp-step__badge">1</span>
+            <h3 class="lp-step__title">Compre / financie</h3>
+            <p class="lp-step__text">Compras e financiamentos elegíveis geram números da sorte automaticamente.</p>
+          </article>
+
+          <article class="lp-step">
+            <span class="lp-step__badge">2</span>
+            <h3 class="lp-step__title">Desbloqueie metas</h3>
+            <p class="lp-step__text">Ao atingir metas de faturamento acumulado, você concorre em novas categorias.</p>
+          </article>
+
+          <article class="lp-step">
+            <span class="lp-step__badge">3</span>
+            <h3 class="lp-step__title">Acompanhe tudo</h3>
+            <p class="lp-step__text">Veja números, progresso, sorteios e materiais de marketing dentro da plataforma.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="lp-section" id="faq">
+      <div class="container">
+        <header class="lp-section__header">
+          <span class="lp-section__mark" aria-hidden="true"></span>
+          <h2 class="lp-section__title">Perguntas Frequentes</h2>
+          <p class="lp-section__subtitle">Baseado no FAQ (demo). A versão final vem da API.</p>
+        </header>
+
+        <div class="lp-faq" data-faq></div>
+      </div>
+    </section>
+
+    <!-- WINNERS -->
+    <section class="db-section" id="ganhadores">
+      <div class="container">
+        <header class="db-section__header">
+          <h2 class="db-section__title">Ganhadores da Campanha</h2>
+          <p class="db-section__subtitle">Lista demonstrativa (mock). No real, vem direto da API.</p>
+        </header>
+
+        <div class="db-table" role="table" aria-label="Ganhadores">
+          <div class="db-table__head" role="rowgroup">
+            <div class="db-table__row db-table__row--head" role="row">
+              <div class="db-table__cell" role="columnheader">Data</div>
+              <div class="db-table__cell" role="columnheader">Prêmio</div>
+              <div class="db-table__cell" role="columnheader">Ganhador</div>
+              <div class="db-table__cell" role="columnheader">Número</div>
+            </div>
+          </div>
+          <div class="db-table__body" role="rowgroup" data-winners></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="lp-footer">
+      <div class="container lp-footer__bottom">
+        <div class="lp-footer__copy">© <span id="year"></span> Solfácil Energia Solar Ltda.</div>
+        <div class="lp-footer__legal">
+          <a class="lp-footer__legal-link" href="#">SCR</a>
+          <span class="lp-footer__sep">/</span>
+          <a class="lp-footer__legal-link" href="#">Termos de Uso</a>
+          <span class="lp-footer__sep">/</span>
+          <a class="lp-footer__legal-link" href="#">Política de Privacidade</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- DRAWER (mobile) -->
+  <div class="lp-drawer" data-drawer>
+    <button class="lp-drawer__backdrop" type="button" aria-label="Fechar menu" data-drawer-close></button>
+
+    <aside class="lp-drawer__sheet" aria-label="Menu">
+      <div class="lp-drawer__section">
+        <a class="lp-drawer__link" href="#minha-pontuacao">Minha pontuação</a>
+        <a class="lp-drawer__link" href="#marketing">Marketing</a>
+        <a class="lp-drawer__link" href="#meus-clientes">Meus clientes</a>
+        <a class="lp-drawer__link" href="#faq">Perguntas</a>
+        <a class="lp-drawer__link" href="#ganhadores">Ganhadores</a>
+      </div>
+
+      <div class="lp-drawer__footer">
+        <div class="lp-drawer__copy">© <span data-year></span> Solfácil Energia Solar Ltda.</div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/demo.js"></script>
+
+  <!-- MODAIS (UI layer) -->
+  <div class="ui-modal" id="modal-regras" aria-hidden="true" role="dialog" aria-label="Regras da Campanha">
+    <div class="ui-modal__backdrop" data-ui-close></div>
+    <div class="ui-modal__panel" role="document">
+      <button class="ui-modal__close" type="button" aria-label="Fechar" data-ui-close>✕</button>
+      <div class="ui-rules__hero" aria-hidden="true">
+        <div class="ui-rules__heroText">
+          <div class="ui-rules__heroTitle">GOLAÇO SOLFÁCIL</div>
+          <div class="ui-rules__heroBig">+15 MIL</div>
+          <div class="ui-rules__heroBig">EM PRÊMIOS</div>
+        </div>
+      </div>
+      <div class="ui-rules__content">
+        <h2 class="ui-rules__title">Regras da Campanha</h2>
+        <div class="ui-rules__card">
+          <div class="ui-rules__scroll" data-ui-rules>
+            <p>Este conteúdo é um <strong>demo</strong>. Na integração real, as regras virão diretamente da API/Regulamento oficial.</p>
+            <ol>
+              <li>Compras e financiamentos elegíveis geram números automaticamente.</li>
+              <li>Regras de validade, multiplicadores e categorias seguem o regulamento.</li>
+              <li>Cancelamentos/estornos podem invalidar números já gerados.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="ui-rules__form">
+          <label class="ui-field">
+            <span class="ui-field__label">CNPJ</span>
+            <input class="ui-field__input" type="text" placeholder="Insira seu CNPJ para aderir a campanha" />
+          </label>
+
+          <label class="ui-check">
+            <input class="ui-check__input" type="checkbox" checked />
+            <span class="ui-check__box" aria-hidden="true"></span>
+            <span class="ui-check__text">Aceito os Termos e Condições da Campanha</span>
+          </label>
+
+          <button class="ui-btn ui-btn--primary" type="button">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui-modal" id="modal-numeros" aria-hidden="true" role="dialog" aria-label="Números da Sorte">
+    <div class="ui-modal__backdrop" data-ui-close></div>
+    <div class="ui-modal__panel ui-modal__panel--wide" role="document">
+      <button class="ui-modal__close" type="button" aria-label="Fechar" data-ui-close>✕</button>
+
+      <header class="ui-lucky__header">
+        <div>
+          <div class="ui-lucky__prize" data-ui-prize>R.000,00</div>
+          <div class="ui-lucky__subtitle" data-ui-prize-sub>30 vales Netshoes no valor de R,00 cada.</div>
+        </div>
+      </header>
+
+      <div class="ui-lucky__toolbar">
+        <div class="ui-search">
+          <span class="ui-search__icon" aria-hidden="true">🔎</span>
+          <input class="ui-search__input" type="search" placeholder="Pesquisar..." data-ui-search />
+        </div>
+
+        <button class="ui-btn ui-btn--dark" type="button" data-ui-toggle-filters>Filtros</button>
+      </div>
+
+      <div class="ui-filters" data-ui-filters hidden>
+        <div class="ui-tabs" role="tablist" aria-label="Tipo">
+          <button class="ui-tab ui-tab--active" type="button" data-ui-tab="integrador">Integrador</button>
+          <button class="ui-tab" type="button" data-ui-tab="cliente">Cliente</button>
+        </div>
+
+        <div class="ui-grid2">
+          <label class="ui-field">
+            <span class="ui-field__label">ID do Pedido</span>
+            <input class="ui-field__input" type="text" placeholder="Informe aqui o ID do Pedido" />
+          </label>
+          <label class="ui-field" data-ui-only="integrador">
+            <span class="ui-field__label">Número da Sorte</span>
+            <input class="ui-field__input" type="text" placeholder="Digite o número da sorte" />
+          </label>
+          <label class="ui-field">
+            <span class="ui-field__label">Data do Pedido</span>
+            <input class="ui-field__input" type="text" placeholder="12/02/2026" />
+          </label>
+          <label class="ui-field" data-ui-only="integrador">
+            <span class="ui-field__label">Categoria</span>
+            <select class="ui-field__input">
+              <option>R.000,00</option>
+              <option>R.000,00</option>
+              <option>R.000,00</option>
+            </select>
+          </label>
+          <label class="ui-field" data-ui-only="cliente" hidden>
+            <span class="ui-field__label">Nome do Cliente</span>
+            <input class="ui-field__input" type="text" placeholder="Nome completo do cliente" />
+          </label>
+          <label class="ui-field" data-ui-only="cliente" hidden>
+            <span class="ui-field__label">CPF do Cliente</span>
+            <input class="ui-field__input" type="text" placeholder="Inserir CPF" />
+          </label>
+        </div>
+
+        <div class="ui-filters__actions">
+          <button class="ui-btn ui-btn--ghost" type="button" data-ui-clear>Limpar</button>
+          <button class="ui-btn ui-btn--primary" type="button" data-ui-apply>Aplicar Filtros</button>
+        </div>
+      </div>
+
+      <section class="ui-lucky">
+        <header class="ui-lucky__meta">
+          <div class="ui-lucky__label">NÚMEROS DA SORTE</div>
+          <div class="ui-badge"><span class="ui-badge__dot" aria-hidden="true"></span><span data-ui-count>50 Números</span></div>
+        </header>
+
+        <div class="ui-numbers" data-ui-grid></div>
+
+        <footer class="ui-lucky__footer">
+          <div class="ui-pager">
+            <span class="ui-pager__text" data-ui-pageinfo>1 de 1</span>
+          </div>
+
+          <button class="ui-btn ui-btn--outline" type="button" data-ui-export>Exportar</button>
+        </footer>
+      </section>
+    </div>
+  </div>
+
+  <!-- MODAIS (DEMO) -->
+  <div class="ui-modal" id="modal-rules" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Regras da Campanha">
+    <div class="ui-modal__box">
+      <button class="ui-modal__close" type="button" aria-label="Fechar" data-ui-close>×</button>
+      <div class="ui-rules__hero" aria-hidden="true">
+        <div class="ui-rules__heroBrand">
+          <div class="ui-rules__heroTitle">Golaço
+Solfácil</div>
+          <div class="ui-rules__heroPrize">+15 MIL</div>
+          <div class="ui-rules__heroSub">EM PRÊMIOS</div>
+        </div>
+      </div>
+
+      <h2 class="ui-rules__title">Regras da Campanha</h2>
+
+      <div class="ui-rules__card" data-ui-rules>
+        <p><strong>Demo:</strong> este conteúdo virá da API/Regulamento oficial.</p>
+        <ol>
+          <li>Compras e financiamentos elegíveis geram números da sorte automaticamente.</li>
+          <li>Alguns itens podem ter multiplicadores conforme regras da campanha.</li>
+          <li>Os sorteios seguem o resultado oficial da Loteria Federal.</li>
+        </ol>
+      </div>
+
+      <div class="ui-rules__form">
+        <label class="ui-field">
+          <span class="ui-field__label">CNPJ</span>
+          <input class="ui-field__input" type="text" placeholder="Insira seu CNPJ para aderir a campanha" />
+        </label>
+
+        <label class="ui-check">
+          <input class="ui-check__input" type="checkbox" checked />
+          <span class="ui-check__box" aria-hidden="true"></span>
+          <span class="ui-check__label">Aceito os Termos e Condições da Campanha</span>
+        </label>
+
+        <button class="ui-rules__submit" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui-modal" id="modal-lucky" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Números da sorte">
+    <div class="ui-modal__box ui-modal__box--wide">
+      <button class="ui-modal__close" type="button" aria-label="Fechar" data-ui-close>×</button>
+
+      <div class="ui-lucky__header">
+        <div>
+          <div class="ui-lucky__value" data-ui-prize>R$ 20.000,00</div>
+          <div class="ui-lucky__subtitle" data-ui-prize-sub>30 vales Netshoes no valor de R$ 300,00 cada.</div>
+        </div>
+        <div class="ui-lucky__pill"><span class="ui-dot" aria-hidden="true"></span><span data-ui-total>50</span> Números</div>
+      </div>
+
+      <div class="ui-lucky__tools">
+        <div class="ui-search">
+          <span class="ui-search__icon" aria-hidden="true"></span>
+          <input class="ui-search__input" type="search" placeholder="Pesquisar..." data-ui-search />
+        </div>
+        <button class="ui-filterBtn" type="button" data-ui-toggle-filters>
+          <span class="ui-filterBtn__icon" aria-hidden="true"></span>
+          Filtros
+        </button>
+      </div>
+
+      <div class="ui-filters" data-ui-filters hidden>
+        <div class="ui-tabs" role="tablist">
+          <button class="ui-tab is-active" type="button" data-ui-tab="integrador">Integrador</button>
+          <button class="ui-tab" type="button" data-ui-tab="cliente">Cliente</button>
+        </div>
+
+        <div class="ui-filters__grid" data-ui-form-integrador>
+          <label class="ui-field"><span class="ui-field__label">ID do Pedido</span><input class="ui-field__input" type="text" placeholder="Informe aqui o ID do Pedido" /></label>
+          <label class="ui-field"><span class="ui-field__label">Número da Sorte</span><input class="ui-field__input" type="text" placeholder="Digite o número da sorte" /></label>
+          <label class="ui-field"><span class="ui-field__label">Data do Pedido</span><input class="ui-field__input" type="text" placeholder="12/02/2026" /></label>
+          <label class="ui-field"><span class="ui-field__label">Categoria</span><input class="ui-field__input" type="text" placeholder="R$ 20.000,00" /></label>
+          <button class="ui-btn" type="button" data-ui-clear>Limpar</button>
+          <button class="ui-btn ui-btn--primary" type="button" data-ui-apply>Aplicar Filtros</button>
+        </div>
+
+        <div class="ui-filters__grid" data-ui-form-cliente hidden>
+          <label class="ui-field"><span class="ui-field__label">ID do Pedido</span><input class="ui-field__input" type="text" placeholder="Informe aqui o ID do Pedido" /></label>
+          <label class="ui-field"><span class="ui-field__label">Nome do Cliente</span><input class="ui-field__input" type="text" placeholder="Nome completo do cliente" /></label>
+          <label class="ui-field"><span class="ui-field__label">Data do Pedido</span><input class="ui-field__input" type="text" placeholder="12/02/2026" /></label>
+          <label class="ui-field"><span class="ui-field__label">CPF do Cliente</span><input class="ui-field__input" type="text" placeholder="Inserir CPF" /></label>
+          <button class="ui-btn" type="button" data-ui-clear>Limpar</button>
+          <button class="ui-btn ui-btn--primary" type="button" data-ui-apply>Aplicar Filtros</button>
+        </div>
+      </div>
+
+      <div class="ui-lucky__sectionLabel">NÚMEROS DA SORTE</div>
+      <div class="ui-lucky__grid" data-ui-grid></div>
+
+      <div class="ui-lucky__footer">
+        <div class="ui-lucky__pager">
+          <span class="ui-muted" data-ui-pageinfo>1 de 1</span>
+          <div class="ui-pager" data-ui-pager>
+            <button class="ui-pager__btn" type="button" data-ui-prev aria-label="Anterior">‹</button>
+            <button class="ui-pager__page is-active" type="button">1</button>
+            <button class="ui-pager__btn" type="button" data-ui-next aria-label="Próximo">›</button>
+          </div>
+        </div>
+
+        <button class="ui-export" type="button" data-ui-export>
+          <span class="ui-export__icon" aria-hidden="true"></span>
+          Exportar
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- UI MODALS (demo) -->
+  <div class="ui-modal" id="ui-modal-rules" role="dialog" aria-modal="true" aria-label="Regras da Campanha">
+    <div class="ui-modal__panel ui-modal__panel--rules">
+      <button class="ui-modal__x" type="button" aria-label="Fechar" data-ui-close>×</button>
+      <div class="ui-modal__hero">
+        <div class="ui-modal__heroText">
+          <div class="ui-heroTitle">GOLAÇO SOLFÁCIL</div>
+          <div class="ui-heroTitle ui-heroTitle--sub">+15 MIL</div>
+          <div class="ui-heroTitle ui-heroTitle--sub">EM PRÊMIOS</div>
+        </div>
+      </div>
+      <div class="ui-modal__content">
+        <h2 class="ui-modal__title">Regras da Campanha</h2>
+        <div class="ui-card">
+          <div class="ui-card__body" data-ui-rules>
+            <p>Conteúdo de regras vindo da API. (demo)</p>
+            <ol>
+              <li>Compras e financiamentos elegíveis geram números automaticamente.</li>
+              <li>Multiplicadores podem aplicar conforme condições da campanha.</li>
+              <li>Consulte o regulamento completo na plataforma.</li>
+            </ol>
+          </div>
+        </div>
+        <label class="ui-field">
+          <span class="ui-field__label">CNPJ</span>
+          <input class="ui-input" placeholder="Insira seu CNPJ para aderir a campanha" />
+        </label>
+        <label class="ui-check">
+          <input type="checkbox" />
+          <span>Aceito os Termos e Condições da Campanha</span>
+        </label>
+        <button class="ui-btn ui-btn--primary" type="button">Enviar</button>
+      </div>
+    </div>
+    <div class="ui-modal__backdrop" data-ui-close></div>
+  </div>
+
+  <div class="ui-modal" id="ui-modal-lucky" role="dialog" aria-modal="true" aria-label="Números da Sorte">
+    <div class="ui-modal__panel">
+      <button class="ui-modal__x" type="button" aria-label="Fechar" data-ui-close>×</button>
+      <div class="ui-modal__top">
+        <div>
+          <div class="ui-top__value" data-ui-prize>R$ 20.000,00</div>
+          <div class="ui-top__sub" data-ui-prize-sub>30 vales Netshoes no valor de R$ 300,00 cada.</div>
+        </div>
+      </div>
+
+      <div class="ui-lucky">
+        <div class="ui-lucky__header">
+          <div class="ui-lucky__label">NÚMEROS DA SORTE</div>
+          <div class="ui-badge"><span class="ui-dot"></span> <span data-ui-total>0</span> Números</div>
+        </div>
+
+        <div class="ui-lucky__tools">
+          <div class="ui-search">
+            <span class="ui-search__icon" aria-hidden="true">🔍</span>
+            <input class="ui-search__input" placeholder="Pesquisar..." data-ui-search>
+          </div>
+          <button class="ui-btn ui-btn--soft" type="button" data-ui-toggle-filters>Filtros</button>
+        </div>
+
+        <div class="ui-filters" data-ui-filters>
+          <div class="ui-tabs" role="tablist">
+            <button class="ui-tab is-active" type="button" data-ui-tab="integrador">Integrador</button>
+            <button class="ui-tab" type="button" data-ui-tab="cliente">Cliente</button>
+          </div>
+
+          <div class="ui-formGrid">
+            <label class="ui-field"><span class="ui-field__label">ID do Pedido</span><input class="ui-input" placeholder="Informe aqui o ID do Pedido" data-ui-filter-order></label>
+            <label class="ui-field"><span class="ui-field__label">Número da Sorte</span><input class="ui-input" placeholder="Digite o número da sorte" data-ui-filter-number></label>
+            <label class="ui-field"><span class="ui-field__label">Data do Pedido</span><input class="ui-input" placeholder="12/02/2026" data-ui-filter-date></label>
+            <label class="ui-field"><span class="ui-field__label">Categoria</span><select class="ui-input" data-ui-filter-category><option>R$ 20.000,00</option><option>R$ 50.000,00</option><option>R$ 100.000,00</option></select></label>
+          </div>
+
+          <div class="ui-filterActions">
+            <button class="ui-btn ui-btn--soft" type="button" data-ui-clear>Limpar</button>
+            <button class="ui-btn ui-btn--primary" type="button" data-ui-apply>Aplicar Filtros</button>
+          </div>
+        </div>
+
+        <div class="ui-lucky__grid" data-ui-grid></div>
+
+        <div class="ui-lucky__footer">
+          <div class="ui-pagination">
+            <span class="ui-muted" data-ui-page-info>1 de 1</span>
+            <div class="ui-pagination__btns">
+              <button type="button" class="ui-page is-active" data-ui-page="1">1</button>
+            </div>
+          </div>
+          <button class="ui-btn ui-btn--soft" type="button" data-ui-export>Exportar</button>
+        </div>
+      </div>
+    </div>
+    <div class="ui-modal__backdrop" data-ui-close></div>
+  </div>
+
+</body>
+</html>
