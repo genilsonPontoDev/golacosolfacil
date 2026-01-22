@@ -222,8 +222,8 @@ body.lp2{ padding-top: var(--lp2-header-h); }
 }
 
 .lp2-card__icon-svg{
-  width: 20px;   /* ajuste conforme o Figma */
-  height: 20px;
+  width: 26px;   /* ajuste conforme o Figma */
+  height: 26px;
   display: block;
 }
 

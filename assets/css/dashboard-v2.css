@@ -200,6 +200,39 @@ body.db2{
 }
 .db2-card__cta:hover{ background:#f5f6f7; }
 
+/* ICON (Quick cards) */
+.db2-card__icon{
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(102,198,28,.12); /* mesmo “verde suave” */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.db2-card__icon-svg{
+  width: 32px;   /* ajuste fino conforme Figma */
+  height: 32px;
+  display: block;
+}
+
+.db2-card__title{
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.db2-card__desc{
+  margin: 0 0 12px;
+  color: var(--lp-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
 /* Quick "Como Funciona" toggle */
 .db2-toggle{
   display:flex;
