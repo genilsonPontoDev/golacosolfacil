@@ -210,6 +210,24 @@ body.lp2{ padding-top: var(--lp2-header-h); }
 .lp2-card__text{ margin: 0 0 12px; color: var(--lp-muted); font-size: 12px; line-height: 1.5; }
 .lp2-card__btn{ padding: 9px 16px; }
 
+.lp2-card__icon{
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(102,198,28,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.lp2-card__icon-svg{
+  width: 20px;   /* ajuste conforme o Figma */
+  height: 20px;
+  display: block;
+}
+
+
 /* Steps */
 .lp2-steps{
   display:grid;
@@ -223,7 +241,23 @@ body.lp2{ padding-top: var(--lp2-header-h); }
   border-radius: 10px;
   overflow:hidden;
 }
-.lp2-step__media{ background: var(--lp-green); height: 140px; position:relative; }
+/* Step media (imagem real) */
+.lp2-step__media{
+  height: 140px;           /* confirme no Figma */
+  background: var(--lp-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lp2-step__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* mantém visual correto */
+  display: block;
+}
+
 .lp2-illus{
   position:absolute; inset:0;
   opacity: .20;
