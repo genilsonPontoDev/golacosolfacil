@@ -1,13 +1,13 @@
 :root{
   --lp-bg: #ffffff;
   --lp-text: #121212;
-  --lp-muted: #6a6a6a;
+  --lp-muted: #7a7a7a;
   --lp-line: #e8e8e8;
 
   --lp-dark: #0e0f10;
   --lp-dark-2: #1a1b1d;
 
-  --lp-green: #66c61c; /* aproxima do verde da Solfácil */
+  --lp-green: #409f14; /* aproxima do verde da Solfácil */
   --lp-shadow: 0 10px 40px rgba(0,0,0,.12);
 
   --lp-radius: 14px;

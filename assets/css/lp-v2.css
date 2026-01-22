@@ -243,7 +243,7 @@ body.lp2{ padding-top: var(--lp2-header-h); }
 }
 /* Step media (imagem real) */
 .lp2-step__media{
-  height: 140px;           /* confirme no Figma */
+  height: 250px;           /* confirme no Figma */
   background: var(--lp-green);
   display: flex;
   align-items: center;
@@ -258,6 +258,12 @@ body.lp2{ padding-top: var(--lp2-header-h); }
   display: block;
 }
 
+@media (max-width: 768px){
+  .lp2-step__media{
+    height: 230px;
+  }
+}
+
 .lp2-illus{
   position:absolute; inset:0;
   opacity: .20;
@@ -267,8 +273,48 @@ body.lp2{ padding-top: var(--lp2-header-h); }
     radial-gradient(circle at 82% 70%, #000 0 16px, transparent 17px);
 }
 .lp2-step__body{ padding: 14px 14px 16px; text-align:center; }
-.lp2-step__title{ margin: 0 0 6px; font-size: 14px; }
-.lp2-step__text{ margin: 0 0 12px; color: var(--lp-muted); font-size: 12px; }
+
+.lp2-step__title{
+  margin: 0 0 6px;
+  font-family: 'Right Grotesk', sans-serif;
+  font-size: 40px;        /* Figma: Size 40 */
+  font-weight: 500;       /* Figma: Medium / 500 */
+  line-height: 48px;      /* Figma: 120% */
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--lp-green);
+}
+
+.lp2-step__title strong{
+  font-weight: inherit;
+}
+
+@media (max-width: 768px){
+  .lp2-step__title{
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.lp2-step__text{
+  margin: 0 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;        /* Figma: Size 18 */
+  font-weight: 400;       /* Regular */
+  line-height: 24px;      /* 133% */
+  letter-spacing: 0;
+  color: var(--lp-muted);         /* Secondary / 600 */
+  text-align: center;
+}
+
+@media (max-width: 768px){
+  .lp2-step__text{
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+
 .lp2-step__btn{ padding: 9px 16px; }
 
 /* FAQ */
