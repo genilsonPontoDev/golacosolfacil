@@ -388,23 +388,64 @@ body.db2{
 .db2-step{
   overflow:hidden;
 }
+/* Step image (igual à landing) */
 .db2-step__img{
   height: 140px;
-  background: #1e9a4a;
-  position:relative;
+  overflow: hidden;
+  background: #e8f5ec; /* fallback */
 }
-.db2-step__img::after{
-  content:"";
-  position:absolute; inset:0;
-  opacity:.18;
-  background:
-    radial-gradient(circle at 20% 80%, #000 0 18px, transparent 19px),
-    radial-gradient(circle at 55% 45%, #000 0 22px, transparent 23px),
-    radial-gradient(circle at 82% 70%, #000 0 16px, transparent 17px);
+
+.db2-step__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
+
 .db2-step__body{ padding: 12px; text-align:center; }
-.db2-step__body h3{ margin: 0 0 6px; font-size: 16px; }
-.db2-step__body p{ margin: 0 0 12px; color:#6b7280; font-size: 11px; }
+
+.db2-step__body h3{
+  margin: 0 0 6px;
+  font-family: 'Right Grotesk', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--lp-green);
+}
+
+.db2-step__body h3 strong{
+  font-weight: inherit;
+}
+
+
+.db2-step__body p{
+  margin: 0 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; /* 133% */
+  color: #7A7A7A;
+  text-align: center;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px){
+  .db2-step__body h3{
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .db2-step__body p{
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
 .db2-step__body a{ font-weight: 800; }
 
 /* Marketing section */
