@@ -429,16 +429,11 @@
 
 (() => {
   const strip = document.querySelector('[data-trail-strip]');
-  const prev = document.querySelector('[data-trail-prev]');
-  const next = document.querySelector('[data-trail-next]');
+  const prev  = document.querySelector('[data-trail-prev]');
+  const next  = document.querySelector('[data-trail-next]');
   if (!strip || !prev || !next) return;
 
-  function getStep() {
-    const item = strip.querySelector('.trail-mini__item');
-    if (!item) return 420; // fallback
-    const rect = item.getBoundingClientRect();
-    return Math.max(200, Math.round(rect.width * 3)); // 3 cards por clique
-  }
+  const getStep = () => Math.max(220, Math.floor(strip.clientWidth * 0.85));
 
   prev.addEventListener('click', (e) => {
     e.preventDefault();
