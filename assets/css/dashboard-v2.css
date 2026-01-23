@@ -577,3 +577,180 @@ body.db2{
   .db2-quick{ grid-template-columns: 1fr; }
   .db2-steps{ grid-template-columns: 1fr; }
 }
+
+/* ===== TRILHA MINI (só o componente) ===== */
+.trail-mini{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  position: relative; /* importante se for sobrepor as setas */
+}
+
+.trail-mini__strip{
+  display:flex;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background:#f2f2f2;
+  width: 100%;
+
+  overflow-x: auto;              /* ✅ permite rolar */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* ✅ “encaixa” */
+}
+
+.trail-mini__item{
+  width: 140px;
+  min-width: 140px;
+  scroll-snap-align: start;      /* ✅ “encaixa” */
+  display:flex;
+  flex-direction:column;
+  border-right: 1px solid #eee;
+  background:#ededed;
+}
+
+.trail-mini__item:last-child{ border-right: 0; }
+
+.trail-mini__top{
+  padding: 10px 12px;
+  font-size: 12px;
+  background:#fff;
+  border-bottom: 1px solid #eee;
+  color:#111;
+}
+
+.trail-mini__mid{
+  height: 70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#c3c3c3;
+}
+
+.trail-mini__icon{
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #d6d6d6;
+  opacity: .8;
+}
+
+.trail-mini__bot{
+  height: 70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 12px;
+  font-weight: 700;
+  color:#bdbdbd;
+  background:#ededed;
+}
+
+.trail-mini__strip::-webkit-scrollbar{ height: 0; }
+.trail-mini__strip{ scrollbar-width: none; }
+
+.trail-mini__nav{
+  z-index: 5;
+}
+
+.trail-mini__nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.trail-mini__nav--prev{ left: -12px; }
+.trail-mini__nav--next{ right: -12px; }
+
+
+/* done = verde embaixo */
+.trail-mini__item.is-done .trail-mini__bot{
+  background: linear-gradient(180deg, #63b83b, #3f9f1c);
+  color:#fff;
+  font-size: 18px;
+}
+
+/* setas (bolinha) */
+.trail-mini__nav{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #e7e7e7;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 20px;
+  cursor:pointer;
+  flex: 0 0 auto;
+}
+.trail-mini__nav:hover{ background:#f5f6f7; }
+
+/* barra embaixo */
+.trail-mini__meter{
+  margin-top: 10px;
+  display:grid;
+  grid-template-columns: 130px 1fr 70px;
+  gap: 10px;
+  align-items:center;
+}
+
+.trail-mini__meter-left,
+.trail-mini__meter-right{
+  font-size: 12px;
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.trail-mini__bar{
+  position:relative;
+  height: 8px;
+  background:#e8e8e8;
+  border-radius: 999px;
+  overflow:hidden;
+}
+
+.trail-mini__fill{
+  position:absolute;
+  left:0; top:0; bottom:0;
+  background: linear-gradient(90deg, #3f9f1c, #63b83b);
+}
+
+.trail-mini__dot{
+  position:absolute;
+  top:50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background:#fff;
+  border: 2px solid #63b83b;
+}
+
+/* Trilhas: área scrollável */
+.db2-trail-strip{
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  border-radius: 10px;
+}
+
+/* Cada card/step deve "encaixar" no snap */
+.db2-trail-step{
+  scroll-snap-align: start;
+  flex: 0 0 auto; /* essencial para scroll horizontal */
+}
+
+/* Se no mobile você quer mostrar 2~3 de uma vez, controle a largura */
+@media (max-width: 780px){
+  .db2-trail-step{
+    width: 160px; /* ajuste fino */
+  }
+}

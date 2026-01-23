@@ -189,23 +189,87 @@
               </div>
             </div>
 
-            <!-- right "trilha" placeholder -->
+            <!-- right "trilha" (SOMENTE O COMPONENTE) -->
             <div class="db2-box">
-              <p style="margin:0 0 10px; font-size:11px; color:#6b7280;">
-                (Aqui entra a trilha detalhada 1:1 do componente “Comp Trilha [1.0]”. Eu encaixo no próximo passo com
-                DOM certinho.)
-              </p>
 
-              <div
-                style="height: 150px; border:1px dashed #dadada; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-size:12px;">
-                Placeholder Trilha
+              <div class="trail-mini" aria-label="Trilha de Faturamento">
+                <button class="trail-mini__nav trail-mini__nav--prev" type="button" aria-label="Voltar"
+                  data-trail-prev>‹</button>
+
+                <div class="trail-mini__strip" data-trail-strip>
+                  <!-- item -->
+                  <article class="trail-mini__item is-done">
+                    <div class="trail-mini__top">Trilha 1</div>
+                    <div class="trail-mini__mid">
+                      <span class="trail-mini__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="trail-mini__bot">✓</div>
+                  </article>
+
+                  <article class="trail-mini__item is-done">
+                    <div class="trail-mini__top">Trilha 2</div>
+                    <div class="trail-mini__mid">
+                      <span class="trail-mini__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="trail-mini__bot">✓</div>
+                  </article>
+
+                  <article class="trail-mini__item">
+                    <div class="trail-mini__top">Trilha 3</div>
+                    <div class="trail-mini__mid">
+                      <span class="trail-mini__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="trail-mini__bot">100K</div>
+                  </article>
+
+                  <article class="trail-mini__item">
+                    <div class="trail-mini__top">Trilha 4</div>
+                    <div class="trail-mini__mid">
+                      <span class="trail-mini__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="trail-mini__bot">150K</div>
+                  </article>
+
+                  <article class="trail-mini__item">
+                    <div class="trail-mini__top">Trilha 5</div>
+                    <div class="trail-mini__mid">
+                      <span class="trail-mini__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="trail-mini__bot">200K</div>
+                  </article>
+
+                  <article class="trail-mini__item">
+                    <div class="trail-mini__top">Trilha 6</div>
+                    <div class="trail-mini__mid">
+                      <span class="trail-mini__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="trail-mini__bot">300K</div>
+                  </article>
+                </div>
+
+                <button class="trail-mini__nav trail-mini__nav--next" type="button" aria-label="Avançar"
+                  data-trail-next>›</button>
               </div>
 
-              <div
-                style="margin-top:10px; height: 12px; border-radius:999px; background: rgba(102,198,28,.18); overflow:hidden;">
-                <div style="width: 60%; height:100%; background:#138a3c;"></div>
+              <div class="trail-mini__meter" aria-label="Progresso da trilha">
+                <div class="trail-mini__meter-left">
+                  <span aria-hidden="true">🏆</span>
+                  <strong>90K</strong> de 100K
+                </div>
+
+                <div class="trail-mini__bar" aria-hidden="true">
+                  <span class="trail-mini__fill" style="width:90%"></span>
+                  <span class="trail-mini__dot" style="left:90%"></span>
+                </div>
+
+                <div class="trail-mini__meter-right">
+                  <strong>90%</strong>
+                  <span aria-hidden="true">✺</span>
+                </div>
               </div>
+
             </div>
+
 
           </div>
         </div>

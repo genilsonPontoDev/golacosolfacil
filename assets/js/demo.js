@@ -233,7 +233,7 @@
       wrap.innerHTML = FAQ.map(function (item, idx) {
         var open = idx === 0 ? " open" : "";
         return (
-          '<details class="lp-faq__item"' + open + ">' +
+          '<details class="lp-faq__item"' + open + '>' +
             '<summary class="lp-faq__summary">' + escapeHtml(item.q) + '</summary>' +
             '<div class="lp-faq__content">' + escapeHtml(item.a) + '</div>' +
           '</details>'
@@ -425,4 +425,28 @@
   renderDashboard(localStorage.getItem("gs2d_demo_profile") || "integrador");
   startCountdown();
   bindDashboardControls();
+})();
+
+(() => {
+  const strip = document.querySelector('[data-trail-strip]');
+  const prev = document.querySelector('[data-trail-prev]');
+  const next = document.querySelector('[data-trail-next]');
+  if (!strip || !prev || !next) return;
+
+  function getStep() {
+    const item = strip.querySelector('.trail-mini__item');
+    if (!item) return 420; // fallback
+    const rect = item.getBoundingClientRect();
+    return Math.max(200, Math.round(rect.width * 3)); // 3 cards por clique
+  }
+
+  prev.addEventListener('click', (e) => {
+    e.preventDefault();
+    strip.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', (e) => {
+    e.preventDefault();
+    strip.scrollBy({ left:  getStep(), behavior: 'smooth' });
+  });
 })();
