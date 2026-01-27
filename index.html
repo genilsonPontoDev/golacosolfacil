@@ -14,6 +14,8 @@
 
   <script src="assets/js/lucky-demo.js" defer></script>
   <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
   <script src="assets/js/lp-v2.js" defer></script>
   <script src="assets/js/lp-topbar.js" defer></script>
   <script src="assets/js/modals.js" defer></script>
@@ -173,90 +175,8 @@
         </header>
 
         <div class="lp2-faq">
-          <details class="lp2-faq__item" open>
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">1.</span>
-                <span class="lp2-faq__t">O que é a campanha Golaço da Solfácil?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>
-                A Golaço da Solfácil é uma campanha promocional onde integradores e clientes finais concorrem a prêmios
-                ao realizar compras e financiamentos através da Solfácil. Quanto mais você compra, mais números da sorte
-                você acumula, e mais chances de ganhar.
-              </p>
-            </div>
-          </details>
+                    <div class="lp2-faq__list" data-faq></div>
 
-          <details class="lp2-faq__item">
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">2.</span>
-                <span class="lp2-faq__t">Qual é o período da campanha?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>Confira o período na barra de campanha e no regulamento oficial. Datas podem variar conforme o
-                regulamento vigente.</p>
-            </div>
-          </details>
-
-          <details class="lp2-faq__item">
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">3.</span>
-                <span class="lp2-faq__t">Quem pode participar?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>Integradores e clientes finais elegíveis, conforme critérios do regulamento. Em caso de dúvida,
-                consulte o regulamento.</p>
-            </div>
-          </details>
-
-          <details class="lp2-faq__item">
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">4.</span>
-                <span class="lp2-faq__t">Onde eu acompanho meus números da sorte?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>Após login, você poderá acompanhar seus números e seu progresso na área logada (Dashboard).</p>
-            </div>
-          </details>
-
-          <details class="lp2-faq__item">
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">5.</span>
-                <span class="lp2-faq__t">Como eu ganho números da sorte como integrador?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>Números são atribuídos conforme as regras de compra/financiamento descritas no regulamento. Cada
-                jornada pode gerar 1, 2 ou 3 números.</p>
-            </div>
-          </details>
-
-          <details class="lp2-faq__item">
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">6.</span>
-                <span class="lp2-faq__t">Como funciona o cálculo dos números da sorte?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>A atribuição e o cálculo seguem o regulamento e os dados fornecidos pela Solfácil (JSON/API).</p>
-            </div>
-          </details>
 
           <div class="lp2-faq__more">
             <button class="lp2-btn lp2-btn--outline" type="button" data-faq-more>Carregar Mais</button>

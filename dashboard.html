@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="assets/css/dashboard-v2.css" />
 
   <!-- seus scripts atuais (mantidos) -->
-  <script src="assets/js/demo.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
   <script src="assets/js/ui.js" defer></script>
   <script src="assets/js/modals.js" defer></script>
 
@@ -503,19 +504,11 @@
         <!-- REAPROVEITA o mesmo HTML da FAQ da LP v2 se você quiser (copie e cole do index.html) -->
         <!-- Aqui vai uma versão curtinha para não ficar vazio -->
         <div class="lp2-faq">
-          <details class="lp2-faq__item" open>
-            <summary class="lp2-faq__summary">
-              <span class="lp2-faq__q">
-                <span class="lp2-faq__n">1.</span>
-                <span class="lp2-faq__t">O que é a campanha Golaço da Solfácil?</span>
-              </span>
-              <span class="lp2-faq__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="lp2-faq__content">
-              <p>Campanha promocional onde integradores e clientes finais concorrem a prêmios ao realizar
-                compras/financiamentos na Solfácil.</p>
-            </div>
-          </details>
+                    <div class="lp2-faq__list" data-faq></div>
+
+          <div class="lp2-faq__more">
+            <button class="lp2-btn lp2-btn--outline" type="button" data-faq-more>Carregar Mais</button>
+          </div>
         </div>
       </section>
 
