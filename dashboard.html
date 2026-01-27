@@ -152,15 +152,26 @@
       <section class="db2-card">
         <div class="db2-card__body db2-progress">
 
-          <div class="db2-progress__top">
-            <span class="db2-chip">📌 Sua Trilha de Faturamento</span>
-            <span class="db2-chip">Você tem <b data-ui-luckynum-total>0</b> números da sorte acumulados para o prêmio
-              final.</span>
-            <a class="db2-chip" href="#" data-ui-open="#modal-filter"
-              style="text-decoration:none; font-weight:800;">Como ganhar mais números da sorte</a>
+          
+          <div class="db2-progress__head">
+            <div class="db2-progress__head-left">
+              <div class="db2-progress__title">
+                <img class="db2-progress__icon" src="assets/img/analytics-icon.svg" alt="" aria-hidden="true">
+                <span>Sua Trilha de Faturamento</span>
+              </div>
+
+              <a class="db2-progress__subtitle" href="#" data-ui-open="#modal-filter" style="text-decoration:none;">
+                Você tem <b data-ui-luckynum-total>0</b> números da sorte acumulados para o prêmio final.
+              </a>
+            </div>
+
+            <div class="db2-progress__head-right">
+              <a class="db2-btn db2-btn--dark" href="#" data-ui-open="#modal-rules">Como ganhar mais números da sorte</a>
+            </div>
           </div>
 
           <div class="db2-progress__grid">
+
             <!-- left metrics -->
             <div class="db2-box">
               <div class="db2-box__kpi">
@@ -631,6 +642,87 @@
 
           <button class="rules-modal__submit" type="submit">Enviar</button>
         </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL: NÚMEROS DA SORTE (Filtros + Export) -->
+  <div class="ui-modal" id="modal-filter" aria-hidden="true" role="dialog" aria-label="Números da sorte">
+    <div class="ui-modal__overlay" data-ui-close></div>
+    <div class="ui-modal__panel ui-modal__panel--lg">
+      <button class="ui-modal__close" type="button" data-ui-close aria-label="Fechar">×</button>
+
+      <div class="db2-filter">
+        <div class="db2-filter__head">
+          <h3 class="db2-filter__title">R$ <span data-ui-fat-money>0,00</span></h3>
+          <p class="db2-filter__sub">30 vales Netshoes no valor de R$ 300,00 cada.</p>
+        </div>
+
+        <div class="db2-filter__toolbar">
+          <label class="db2-search">
+            <span class="db2-search__icon" aria-hidden="true">🔎</span>
+            <input class="db2-search__input" type="search" placeholder="Pesquisar..." data-ui-filter-search>
+          </label>
+
+          <button class="db2-btn db2-btn--dark" type="button" data-ui-filter-toggle>
+            <span aria-hidden="true">⎇</span> Filtros
+          </button>
+        </div>
+
+        <div class="db2-filter__tabs" role="tablist" aria-label="Tipo de participante">
+          <button class="db2-tab db2-tab--active" type="button" role="tab" aria-selected="true" data-ui-filter-tab="integrador">Integrador</button>
+          <button class="db2-tab" type="button" role="tab" aria-selected="false" data-ui-filter-tab="cliente">Cliente</button>
+        </div>
+
+        <div class="db2-filter__form" data-ui-filter-form hidden>
+          <div class="db2-formgrid">
+            <div class="db2-field">
+              <label class="db2-field__label" for="f-orderid">ID do Pedido</label>
+              <input class="db2-field__input" id="f-orderid" type="text" placeholder="Informe aqui o ID do Pedido" data-ui-filter-orderid>
+            </div>
+            <div class="db2-field">
+              <label class="db2-field__label" for="f-customer">Nome do Cliente</label>
+              <input class="db2-field__input" id="f-customer" type="text" placeholder="Nome completo do cliente" data-ui-filter-customer>
+            </div>
+
+            <div class="db2-field">
+              <label class="db2-field__label" for="f-date">Data do Pedido</label>
+              <input class="db2-field__input" id="f-date" type="date" data-ui-filter-date>
+            </div>
+            <div class="db2-field">
+              <label class="db2-field__label" for="f-cpf">CPF do Cliente</label>
+              <input class="db2-field__input" id="f-cpf" type="text" placeholder="Inserir CPF" data-ui-filter-cpf>
+            </div>
+          </div>
+
+          <div class="db2-filter__actions">
+            <button class="db2-btn" type="button" data-ui-filter-clear>Limpar</button>
+            <button class="db2-btn db2-btn--primary" type="button" data-ui-filter-apply>Aplicar Filtros</button>
+          </div>
+        </div>
+
+        <div class="db2-filter__meta">
+          <span class="db2-filter__meta-label">NÚMEROS DA SORTE</span>
+          <span class="db2-chip db2-chip--soft"><span class="db2-dot" aria-hidden="true"></span><span data-ui-filter-count>0</span> Números</span>
+        </div>
+
+        <div class="db2-filter__nums" data-ui-filter-numbers>
+          <!-- preenchido via JS (demo / API) -->
+        </div>
+
+        <div class="db2-filter__footer">
+          <div class="db2-pager" data-ui-filter-pager>
+            <span class="db2-pager__info" data-ui-filter-pageinfo>1 de 1</span>
+            <button class="db2-pager__btn" type="button" data-ui-filter-prev aria-label="Página anterior">‹</button>
+            <button class="db2-pager__page db2-pager__page--active" type="button" data-ui-filter-page="1">1</button>
+            <button class="db2-pager__btn" type="button" data-ui-filter-next aria-label="Próxima página">›</button>
+          </div>
+
+          <button class="db2-btn" type="button" data-ui-filter-export>
+            <span aria-hidden="true">⤓</span> Exportar
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -174,9 +174,117 @@
     });
   }
 
-  // --- Boot -------------------------------------------------------------
+  
+  // --- Lucky numbers modal (Filters + Export) ---------------------------
+  function initLuckyModal() {
+    var modal = document.getElementById("modal-filter");
+    if (!modal) return;
+
+    var listEl = modal.querySelector("[data-ui-filter-numbers]");
+    var countEl = modal.querySelector("[data-ui-filter-count]");
+    var moneyEl = modal.querySelector("[data-ui-fat-money]");
+    var searchEl = modal.querySelector("[data-ui-filter-search]");
+    var formWrap = modal.querySelector("[data-ui-filter-form]");
+    var toggleBtn = modal.querySelector("[data-ui-filter-toggle]");
+    var clearBtn = modal.querySelector("[data-ui-filter-clear]");
+    var applyBtn = modal.querySelector("[data-ui-filter-apply]");
+    var exportBtn = modal.querySelector("[data-ui-filter-export]");
+    var tabs = Array.prototype.slice.call(modal.querySelectorAll("[data-ui-filter-tab]"));
+
+    function currentProfileKey() {
+      return localStorage.getItem("gs2d_profile") || "integrador";
+    }
+
+    function getNumbersForProfile(key) {
+      var p = (CONFIG.profiles && CONFIG.profiles[key]) || (CONFIG.profiles && CONFIG.profiles.integrador) || {};
+      return Array.isArray(p.luckyNumbers) ? p.luckyNumbers.slice() : [];
+    }
+
+    var allNums = [];
+
+    function render(nums) {
+      if (!listEl) return;
+      listEl.innerHTML = (nums || []).map(function (n) {
+        return '<span class="db2-num">' + escapeHtml(n) + "</span>";
+      }).join("");
+
+      if (countEl) countEl.textContent = String((nums || []).length);
+    }
+
+    function applySearch() {
+      if (!searchEl) return render(allNums);
+      var q = (searchEl.value || "").trim();
+      if (!q) return render(allNums);
+      var filtered = allNums.filter(function (n) { return String(n).indexOf(q) !== -1; });
+      render(filtered);
+    }
+
+    function openFor(profileKey) {
+      allNums = getNumbersForProfile(profileKey);
+
+      // Header money/sub (demo). Quando integrar com API, isso vem do payload.
+      if (moneyEl) moneyEl.textContent = "20.000,00";
+
+      applySearch();
+    }
+
+    // When user clicks on something that opens this modal, render data
+    document.addEventListener("click", function (e) {
+      var t = e.target && e.target.closest ? e.target.closest('[data-ui-open="#modal-filter"]') : null;
+      if (!t) return;
+      openFor(currentProfileKey());
+    });
+
+    if (toggleBtn && formWrap) {
+      toggleBtn.addEventListener("click", function () {
+        formWrap.hidden = !formWrap.hidden;
+      });
+    }
+
+    if (tabs.length) {
+      tabs.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          tabs.forEach(function (b) {
+            b.classList.remove("db2-tab--active");
+            b.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("db2-tab--active");
+          btn.setAttribute("aria-selected", "true");
+        });
+      });
+    }
+
+    if (searchEl) {
+      searchEl.addEventListener("input", applySearch);
+    }
+
+    if (clearBtn && searchEl) {
+      clearBtn.addEventListener("click", function () {
+        searchEl.value = "";
+        if (formWrap) formWrap.hidden = true;
+        applySearch();
+      });
+    }
+
+    if (applyBtn) {
+      applyBtn.addEventListener("click", function () {
+        // Demo: por enquanto, só fecha o painel de filtros
+        if (formWrap) formWrap.hidden = true;
+      });
+    }
+
+    if (exportBtn) {
+      exportBtn.addEventListener("click", function () {
+        exportBtn.textContent = "Exportado (demo)";
+        setTimeout(function () { exportBtn.textContent = "Exportar"; }, 1200);
+      });
+    }
+  }
+
+// --- Boot -------------------------------------------------------------
   renderFAQ();
   renderDashboard(localStorage.getItem('gs2d_profile') || 'integrador');
   startCountdown();
   bindTrailScroll();
+  initLuckyModal();
 })();
