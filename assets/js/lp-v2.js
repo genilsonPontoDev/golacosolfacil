@@ -7,7 +7,7 @@
     var items = Array.prototype.slice.call(wrap.querySelectorAll(".lp2-faq__item"));
     var btn = document.querySelector("[data-faq-more]");
     if (!btn || items.length <= 6) {
-      if (btn) btn.style.display = "none";
+      if (btn) btn.style.display = "block";
       return;
     }
 
